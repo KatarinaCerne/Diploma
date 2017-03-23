@@ -1,0 +1,269 @@
+\documentclass[12pt,a4paper,reqno]{amsart}
+% ukazi za delo s slovenscino -- izberi kodiranje, ki ti ustreza
+\usepackage[slovene]{babel}
+%\usepackage[cp1250]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{url}
+%\usepackage[normalem]{ulem}
+\usepackage[dvipsnames,usenames]{color}
+
+% ne spreminjaj podatkov, ki vplivajo na obliko strani
+\textwidth 15cm
+\textheight 24cm
+\oddsidemargin.5cm
+\evensidemargin.5cm
+\topmargin-5mm
+\addtolength{\footskip}{10pt}
+\pagestyle{plain}
+\overfullrule=15pt % oznaci predlogo vrstico
+
+
+% ukazi za matematicna okolja
+\theoremstyle{definition} % tekst napisan pokoncno
+\newtheorem{definicija}{Definicija}[section]
+\newtheorem{primer}[definicija]{Primer}
+\newtheorem{opomba}[definicija]{Opomba}
+
+\theoremstyle{plain} % tekst napisan posevno
+\newtheorem{lema}[definicija]{Lema}
+\newtheorem{izrek}[definicija]{Izrek}
+\newtheorem{trditev}[definicija]{Trditev}
+\newtheorem{posledica}[definicija]{Posledica}
+
+
+% za stevilske mnozice uporabi naslednje simbole
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+
+
+% naslednje ukaze ustrezno popravi
+\newcommand{\program}{Matematika} % ime studijskega programa: Matematika/Finan"cna matematika
+\newcommand{\imeavtorja}{Katarina Černe} % ime avtorja
+\newcommand{\imementorja}{izred.~prof.~dr.~Barbara Drinovec Drnovšek} % akademski naziv in ime mentorja
+\newcommand{\naslovdela}{Permutacije in konvergenca številskih vrst}
+\newcommand{\letnica}{2016} %letnica diplome
+
+\begin{document}
+% od tod do povzetka ne spreminjaj nicesar
+\thispagestyle{empty}
+\noindent{\large
+UNIVERZA V LJUBLJANI\\[1mm]
+FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
+\program\ -- 1.~stopnja}
+\vfill
+
+\begin{center}{\large
+\imeavtorja\\[2mm]
+{\bf \naslovdela}\\[10mm]
+Delo diplomskega seminarja\\[1cm]
+Mentor: \imementorja}
+\end{center}
+\vfill
+
+\noindent{\large
+Ljubljana, \letnica}
+\pagebreak
+
+\thispagestyle{empty}
+\tableofcontents
+\pagebreak
+
+\section{Uvod}
+
+Številska vrsta $\sum^{\infty}_{n=1}a_n$ je neskončna vsota členov zaporedja realnih števil \\$\{a_{n}\}_{n\in \N}$. Zaporedje delnih vsot številske vrste je definirano kot zaporedje $\{S_{n}\}_{n\in \N}$ s členi $S_i = a_1 + a_2 + \ldots + a_i$. Pravimo, da številska vrsta $\sum^{\infty}_{n=1}a_n$ \emph{konvergira}, če konvergira zaporedje njenih delnih vsot $\{S_n\}^{\infty}_{n=1}$. Vsota te vrste je enaka limiti zaporedja delnih vsot. Konvergentne vrste ločimo na \emph{absolutno konvergentne} in \emph{pogojno konvergentne}. Vrsta $\sum^{\infty}_{n=1}a_n$ konvergira absolutno, če konvergira vrsta $\sum^{\infty}_{n=1}|a_n|$, pogojno pa konvergira, če vrsta $\sum^{\infty}_{n=1}a_n$ konvergira, vrsta $\sum^{\infty}_{n=1}|a_n|$ pa divergira. V zvezi s konvergenco vrst je potrebno omeniti tudi dva pomembna izreka.
+
+\begin{izrek}\label{izr:absolutno}
+Naj bo $\sum^{\infty}_{n=1}a_n$ absolutno konvergenta. Potem za vsako permutacijo $\pi$ konvergira tudi $\sum^{\infty}_{n=1}a_{\pi (n)}$ in velja $\sum^{\infty}_{n=1}a_n = \sum^{\infty}_{n=1}a_{\pi (n)}$
+\end{izrek}
+
+\begin{izrek}\label{izr:riemann}
+Naj bo $\sum^{\infty}_{n=1}a_n$ pogojno konvergentna vrsta. Potem za vsako število $A\in \R \cup \{ \pm \infty \}$ obstaja taka permutacija $\pi$, da je $\sum^{\infty}_{n=1}a_{\pi (n)} = A$.
+\end{izrek}
+
+Vidimo torej, da lahko v absolutno konvergentnih vrstah poljubno premešamo člene, ne da bi kakorkoli vplivali na vsoto ali konvergenco vrste, medtem ko za pogojno konvergentne vrste obstajajo permutacije, ki spremenijo vrstni red členov tako, da lahko dobljena vrsta konvergira h kateremukoli realnemu številu, ali pa celo divergira. Pri tem se pojavi vprašanje, kakšne so te permutacije. Se jih da kako klasificirati? Imajo kakšne skupne lastnosti? V nadaljevanju se bomo ukvarjali predvsem s permutacijami na členih pogojno konvergentnih vrst, ki ohranjajo konvergenco. Primer takih permutacij so t.~i.\ $\lambda$-permutacije.
+
+\subsection{Permutacije z lastnostjo $\lambda$}
+
+\begin{definicija}
+Permutacijo naravnih števil $\sigma$ imenujemo \emph{$\lambda$-permutacija} oz. \emph{permutacija z lastnostjo $\lambda$}, če velja:
+\begin{itemize}
+\item[(1)] Če vrsta $\displaystyle\sum^{\infty}_{n=1}a_n$ konvergira, potem konvergira tudi $\displaystyle\sum^{\infty}_{n=1}a_{\sigma (n)}.$
+\item[(2)] Obstaja vsaj ena divergentna vrsta $\displaystyle\sum^{\infty}_{n=1}b_n$, da vrsta $\displaystyle\sum^{\infty}_{n=1}b_{\sigma (n)}$ konvergira.
+\end{itemize}
+\end{definicija}
+
+\begin{opomba}
+V nadaljevanju bomo divergentne vrste, za katere obstaja kakršnakoli permutacija, ki vrstni red elementov spremeni tako, da novonastala vrsta konvergira, imenovali kar \emph{pogojno divergentne vrste}.
+\end{opomba}
+
+Naravno se ob definiciji $\lambda$-permutacij pojavi kar nekaj vprašanj. Najprej se lahko vprašamo, kako težko je skonstruirati tako permutacijo, oziroma ali kakšna taka permutacija sploh obstaja. Nadalje, koliko takih permutacij obstaja. Kaj še lahko povemo o permutacijah z lastnostjo $\lambda$ in množici vseh $\lambda$-permutacij? Eno izmed pomembnejših vprašanj, ki se porajajo ob raziskovanju lastnosti množice $\lambda$-permutacij, je vprašanje njene omejenosti. Če je ta množica navzgor omejena, namreč obstaja optimalna $\lambda$-permutacija, ki ustvari največ konvergentnih vrst. Če je to res in če je ta optimalna perutacija različna od identitete, bi bilo bolje, da bi, kar se tiče seštevanja vrst, namesto običajnega uporabljali drugačno zaporedje naravnih števil, torej zaporedje, ki ga narekuje dobljena optimalna permutacija? Nazadnje pa se lahko vprašamo še, ali nam $\lambda$ permutacije lahko pomagajo pri vsaki pogojno divergentni vrsti oziroma ali za vsako pogojno divergentno vrsto $\sum^{\infty}_{n=1}a_n$ obstaja $\lambda$-permutacija $\sigma$, da $\sum^{\infty}_{n=1}a_{\sigma (n)}$ konvergira. To so vprašanja, na katera bo odgovorjeno v tej diplomski nalogi.
+
+\section{Primer konstrukcije $\lambda$-permutacije}
+
+Oglejmo si primer konstrukcije permutacije z lastnostjo $\lambda$. S tem bomo tudi pokazali, da množica $\lambda$-permutacij ni prazna.
+Naravna števila najprej razvrstimo v bloke naraščajoče velikosti na naslednji način:
+
+\begin{equation}
+1 \quad 2\: 3\: 4 \quad 5\: 6\: 7\: 8\: 9 \quad 10\: 11\: 12\: 13\: 14\: 15\: 16 \quad 17\: 18\: 19\: 20\: 21\: 22\: 23\: 24\: 25\: \ldots 
+\label{eq:1}
+\end{equation}
+
+Bloki imajo liho število elementov. Moč vsakega bloka je za $2$ večja od moči predhodnega bloka. Sedaj pa vsak blok preoblikujemo tako, da na začetek postavimo število na sredini bloka. Na drugem mestu bo število, ki je za $1$ večje od srednjega števila, sledi število, ki je od srednjega za $1$ manjše, potlej število za $2$ večje od srednjega, in tako dalje dokler ne preuredimo vseh števil v bloku. Dobimo naslednje zaporedje:
+
+\begin{equation}  
+1 \quad 3\: 4\: 2 \quad 7\: 8\: 6\: 9\: 5 \quad 13\: 14\: 12\: 15\: 11\: 16\: 10 \quad 21\: 22\: 20\: 23\: 19\: 24\: 18\: 25\: 17 \ldots 
+\label{eq:2}
+\end{equation}
+
+Permutacijo, ki na zaporedje naravnih števil deluje na zgoraj opisani način, označimo s $\sigma$. 
+
+Permutacijo $\sigma$ uporabimo na členih številske vrste $\sum^{\infty}_{n=1}a_n$. Njene delne vsote bomo označili s $S_n$. Opazimo lahko, da je vsaka delna vsota $\tilde{S_n}$ permutirane vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ linearna kombinacija največ treh delnih vsot prvotne vrste. Natančneje, velja, da je 
+\begin{equation}
+\tilde{S_N}=S_{q^2}+(S_B-S_A).\label{eq:3} 
+\end{equation}
+Tu je $q^2$ največji popolni kvadrat, manjši od $N$, in $A \geq q^2$, $B \geq q^2$ ter $A \leq B$. Vsak blok v zaporedju (\ref{eq:1}) se namreč konča s popolnim kvadratom, tako da so indeksi členov v delni vsoti $S_{q^2}=a_1+a_2+\ldots+a_{q^2}$ vsa števila iz blokov od prvega do vključno tistega, ki se konča s $q^2$. Ker se permutiranje členov izvaja samo znotraj blokov, bo imela delna vsota $\tilde{S_{q^2}}$ enake člene kot $S_{q^2}$, le v drugačnem vrstnem redu. Delna vsota $S_4$ na primer izgleda tako: $S_4 = a_1+a_2+a_3+a_4$, medtem ko je $\tilde{S}_4$ taka: $\tilde{S}_4=a_{\sigma(1)}+a_{\sigma(2)}+a_{\sigma(3)}+a_{\sigma(4)}=a_1+a_3+a_4+a_2$. Vidimo, da sta obe delni vsoti enaki, saj vsebujeta vse člene z indeksi iz prvih dveh blokov. Za delne vsote  permutirane vrste torej velja: $\tilde{S_n}=\tilde{S_{q^2}}+Q=S_{q^2}+Q$, kjer je $q^2$ največji popolni kvadrat, manjši od $n$, $Q$ pa vsebuje člene z indeksi, večjimi od $q^2$. Po kontrukciji permutacije $\sigma$ velja, da če $Q$ vsebuje člena $a_C$ in $a_B$, kjer je $C < B$, potem bo vseboval tudi vse člene $a_i$, kjer je $C<i<B$. Torej lahko zapišemo $Q=S_B-S_{C-1}$, od koder sledi enačba (\ref{eq:3}).
+
+
+%\begin{align*}
+%\tilde{S_1}&=a_{\sigma(1)}=a_1=S_1\\
+%\tilde{S_3}&=a_{\sigma(1)}+S_1+(S_4-S_2)\\
+%\tilde{S_7}&=S_4+(S_8-S_5)\\
+%\end{align*}
+
+%V splošnem velja $\tilde{S_N}=S_{q^2}+(S_A-S_B)$, kjer je $q^2$ največji popolni kvadrat, manjši od $N$, in $A \geq q^2$ ter $B \geq q^2$.
+Po Cauchyjevem kriteriju za konvergenco zaporedij vrsta $\sum^{\infty}_{n=1}a_n$ konvergira natanko tedaj, ko za vsak $\epsilon >0$ obstaja $n_0 \in \N$, da za vsak par indeksov $m,n\in \N \textrm{, }m>n\geq n_0$ velja $|S_m-S_n|<\epsilon$. Ker je vsaka delna vsota vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ končna linearna kombinacija delnih vsot vrste $\sum^{\infty}_{n=1}a_{n}$, bo Cauchyjev kriterij, če bo veljal za vrsto $\sum^{\infty}_{n=1}a_{n}$, veljal tudi za $\sum^{\infty}_{n=1}a_{\sigma(n)}$. S tem je zadoščeno prvi točki iz definicije $\lambda$-permutacije. 
+Da pokažemo, da je $\sigma$ res $\lambda$-permutacija, moramo poiskati še pogojno divergentno vrsto, iz katere bo permutacija $\sigma$ ustvarila pogojno konvergentno vrsto. Primer take divergente vrste je:
+$$1+\left (-\frac{1}{2}-\frac{1}{2}+\frac{1}{2}\right )+\left (\frac{1}{3}+\frac{1}{3}+\frac{1}{3}-\frac{1}{3}-\frac{1}{3} \right )+\left (-\frac{1}{4}-\frac{1}{4}-\frac{1}{4}-\frac{1}{4}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4}\right )+$$ $$+\left (\frac{1}{5}+\frac{1}{5}+\frac{1}{5}+\frac{1}{5}+\frac{1}{5}-\frac{1}{5}-\frac{1}{5}-\frac{1}{5}-\frac{1}{5} \right )+\dots $$
+
+Ko na zgornji vrsti uporabimo permutacijo $\sigma$, dobimo:
+$$1-\frac{1}{2}+\frac{1}{2}-\frac{1}{2}+\frac{1}{3}-\frac{1}{3}+\frac{1}{3}-\frac{1}{3}+\frac{1}{3}-\frac{1}{4}+\frac{1}{4}-\frac{1}{4}+\frac{1}{4}-\frac{1}{4}+\frac{1}{4}-\frac{1}{4}+\frac{1}{5}-\frac{1}{5} \pm \dots$$
+Dobljena vrsta konvergira po testu za alternirajoče vrste.
+
+\section{Lastnosti $\lambda$-permutacij}
+
+\subsection{Ohranjanje konvergence in vsote}
+
+Pravimo, da permutacija \emph{ohranja konvergenco}, kadar iz konvergence vrste $\sum^{\infty}_{n=1}a_n$ sledi konvergenca vrste $\sum^{\infty}_{n=1}a_{\sigma (n)}$, in \emph{ohranja vsoto}, kadar velja, da je $\sum^{\infty}_{n=1}a_n=\sum^{\infty}_{n=1}a_{\sigma (n)}$.
+
+Za lažje obravnavanje lastnosti $\lambda$-permutacij vpeljimo notacijo
+
+$$[c,d]_{\Z}=\{x \in \Z^+ ; c \leq x \leq d \},$$
+
+kjer sta $c$ in $d$ naravni števili, za kateri velja $c\leq d$. Naj bo sedaj $\sigma$ neka permutacija naravnih števil in $n$ naravno število. Zapišemo lahko:
+
+$$\{ \sigma (1), \sigma (2), \ldots \sigma (n) \} = [c^n_1, d^n_1]_{\Z} \cup [c^n_2, d^n_2]_{\Z} \cup \cdots \cup [c^n_{b_n}, d^n_{b_n}]_{\Z},$$
+
+pri čemer je $c^n_i \leq d^n_i$ in $c^n_{i+1} \geq d^n_i +2$. Z $b_n$ smo označili število blokov oblike $[c^n_i, d^n_i]_{\Z}$, ki sestavljajo zgornjo unijo. Za permutacijo $\sigma$ lahko definiramo zaporedje $\{b_n\}^{\infty}_{n=1}$, ki ga imenujemo \emph{zaporedje števil blokov}.
+
+\begin{trditev}
+Naj bo $\sigma$ permutacija naravnih števil. Naslednje trditve so ekvivalentne:
+\begin{itemize}
+\item permutacija $\sigma$ ohranja konvergenco
+\item zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ je omejeno
+\item permutacija $\sigma$ ohranja vsoto
+\end{itemize}
+\end{trditev}
+
+\begin{posledica}
+Naj bo $\sigma$ permutacija, ki ohranja konvergenco in $\sum^{\infty}_{n=1}a_n$ konvergentna vrsta. Potem obstaja tako število $B\in \mathbb{N}$, da je vsaka delna vsota vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ linearna kombinacija največ $B$ delnih vsot prvotne vrste.
+\end{posledica}
+
+\subsection{Množici $\mathcal{O}$ in $\mathcal{N}$}
+
+Naj bo $\mathcal{O}$ množica vseh permutacij naravnih števil, ki ohranjajo konvergenco, vendar niso $\lambda$-permutacije, z $\mathcal{N}$ pa označimo množico vseh $\lambda$-permutacij. Oglejmo si nekaj njunih lastnosti.
+
+\begin{trditev}\label{trd:o in n}
+Velja:
+\begin{itemize}
+\item če je $\sigma$ element množice $\mathcal{N}$  in $\beta$ element množice $\mathcal{O}$, potem je tudi $\sigma \circ \beta$ element $\mathcal{N}$
+\item če je $\sigma$ element množice $\mathcal{N}$, potem $\sigma^{-1}$ ni element $\mathcal{O}$
+\item če je $\sigma$ element $\mathcal{N}$, potem je tudi $\sigma \circ \sigma$ element $\mathcal{N}$
+\item $\mathcal{N}$ je polgrupa za kompozitum permutacij, ni pa grupa
+\end{itemize}
+\end{trditev}
+
+\begin{posledica}
+Permutacija naravnih števil $\sigma$ je $\lambda$-permutacija natanko tedaj ko ohranja konvergenco, njen inverz pa ne.
+\end{posledica}
+
+\section{Množica vseh $\lambda$-permutacij}
+
+\subsection{Moč množice $\lambda$ permutacij}
+
+Pokazali smo že, da množica $\lambda$-permutacij ni prazna.
+O njeni moči govori naslednji izrek.
+
+\begin{izrek}
+$card(\mathcal{N})=card(\mathcal{O})=2^{\aleph_0}$
+\end{izrek}
+
+\subsection{Omejenost množice $\lambda$ permutacij}
+
+Ali ima množica vseh $\lambda$-permutacij zgornjo mejo, tj.\ ali obstaja permutacija, ki ustvari največ konvergentnih vrst?
+
+Najprej definirajmo relacijo delne urejenosti na množici $ \mathbb{N}$. Naj bosta $\sigma _1$ in $\sigma _2$ $\lambda$-permutaciji. Rečemo, da je $\sigma_1 < \sigma_2$, če za vsako vrsto $\sum^{\infty}_{n=1}a_n$, za katero $\sum^{\infty}_{n=1}a_{\sigma_2(n)}$ konvergira, konvergira tudi $\sum^{\infty}_{n=1}a_{\sigma_1(n)}$. 
+
+Pokazali smo že (trditev \ref{trd:o in n}), da če je $\sigma$ $\lambda$-permutacija, potem je tudi $\sigma \circ \sigma$  $\lambda$-permutacija. Če vrsta $\sum^{\infty}_{n=1}a_{\sigma(n)}$ konvergira, torej konvergira tudi $\sum^{\infty}_{n=1}a_{\sigma \circ \sigma(n)}$. Velja torej $\sigma < \sigma \circ \sigma$, od tod pa induktivno sledi: $\sigma < \sigma \circ \sigma < \sigma \circ \sigma \circ \sigma < \cdots$. Za vsako $\lambda$-permutacijo lahko najdemo novo $\lambda$-permutacijo, ki bo ">večja"< od nje. Torej množica vseh $\lambda$-permutacij nima zgornje meje. 
+
+
+\section{Pogojno divergentne vrste in $\lambda$-permutacije}
+
+V tem razdelku bomo poskušali odgovoriti še na vprašanje, ali za vsako pogojno divergentno vrsto obstaja $\lambda$-permutacija, taka, da vrsta s spremenjenim vrstnim redom členov konvergira. V ta namen za vsako pogojno konvergento oziroma pogojno divergentno vrsto definirajmo množico $$S=\left \{L\in \mathbb{R}:\textrm{obstaja }\lambda \textrm{-permutacija } \sigma, \sum^{\infty}_{n=1}a_{\sigma (n)}=L\right \}.$$ Na vprašanje bomo odgovorili s pomočjo protiprimera.
+
+Oglejmo si vrsto:
+$$\sum^{\infty}_{n=1}a_n = 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}-1+\frac{1}{5}+\frac{1}{6}+ \dots +\frac{1}{33}-\frac{1}{2}+\dots$$
+Vrsta je pogojno divergentna. Pokažemo pa lahko, da je z nobeno $\lambda$-permutacijo ne moremo spremeniti v konvergentno. Za to vrsto je torej $S=\emptyset$. 
+
+Izrek \ref{izr:riemann} pravi, da je v vsaki pogojno konvergentni vrsti mogoče spremeniti vrstni red členov tako, da dobljena vrsta divergira ali pa konvergira proti kateremukoli realnemu številu. Zgolj z uporabo $\lambda$-permutacij lahko to dosežemo pri naslednji vrsti:
+$$\sum^{\infty}_{n=1}a_n= 1-1-\frac{1}{2}-\frac{1}{3}-\frac{1}{4}+\frac{1}{2}+\frac{1}{3}+\dots +\frac{1}{33}-\frac{1}{5}-\dots $$
+Za vsako število $L\in \mathbb{R}$ obstaja $\lambda$-permutacija, ki iz zgornje (divergentne) vrste ustvari konvergentno vrsto z vsoto $L$. Torej je $S=\mathbb{R}$.
+
+\section{Še dva primera...}
+
+Za konec si oglejmo še dva primera $\lambda$-permutacij.
+
+\begin{primer}
+Razdelimo naravna števila v bloke na naslednji način:\\
+
+$1 \quad 2\: 3\: 4\: 5 \quad 6\: 7\: 8\: 9\: 10\: 11 \quad 12\: 13\: 14\: 15\: 16\: 17\: 18\: 19\: \ldots $\\
+
+Sedaj vsak blok razdelimo na dva enako velika boka in ju prepletemo med sabo. Blok $6\: 7\: 8\: 9\: 10\: 11$ na primer razdelimo na bloka $6\: 7\: 8$ in $9\: 10\: 11$ ter ju prepletemo tako, da na prvo mesto postavimo prvo število prvega bloka, na drugo mesto prvo število drugega bloka, na tretje mesto drugo število prvega bloka in tako dalje. Ko opisani postopek izvedemo na vseh blokih v zaporedju, dobimo:\\
+
+$1 \quad 2\: 4\: 3\: 5 \quad 6\: 9\: 7\: 10\: 8\: 11 \quad 12\: 16\: 13\: 17\: 14\: 18\: 15\: 19\: \ldots $
+\end{primer}
+
+\begin{primer}
+Zopet začnemo z zaporedjem naravnih števil, razdeljenim v bloke:\\
+
+$1 \quad 2\: 3\: 4\quad 5\: 6\: 7\: 8\: 9\: 10 \quad 11\: 12\: 13\: 14\: 15\: 16\:17\: 18\: 19\: \ldots $\\
+
+Drugi blok preoblikujemo tako, da prepletemo med sabo bloka $2\: 3$ in $4$. V tretjem bloku prepletemo bloka $5\: 6\: 7\: 8$ in $9\: 10$. V četrtem bloku prepletemo $11\: 12\: 13\: 14\: 15\: 16$ in $17\: 18\: 19$. Tako dobimo:\\
+
+$1 \quad 2\: 4\: 3\quad 5\: 6\: 9\: 7\: 8\: 10 \quad 11\: 12\: 17\: 13\: 14\: 18\: 15\: 16\: 19\: \ldots $
+
+\end{primer}
+
+\section{Zaključek}
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{vir1}
+S.~G.~Krantz in J. D. McNeal, \textit{Creating more convergent series}, Amer.~Math.~Monthly \textbf{111} (2004) 32-38.
+\bibitem{vir2}
+D.~Velleman, \textit{A note on $\lambda$-permutations}, Amer.~Math.~Monthly \textbf{113} (2006) 173-178.
+\bibitem{vir3}
+P.~Schaefer, \textit{Sum-preserving rearrangements of infinite series}, Amer.~Math.~Monthly \textbf{88} (1981), 33-40.
+\bibitem{vir4}
+J.~Globevnik in M.~Brojan, \textit{Analiza I},  DMFA - založništvo, Ljubljana, 2010.
+
+\end{thebibliography}
+
+\end{document}
+
