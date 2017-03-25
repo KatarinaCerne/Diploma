@@ -103,7 +103,7 @@ V nadaljevanju bomo divergentne vrste, za katere obstaja kakršnakoli permutacij
 
 Naravno se ob definiciji $\lambda$-permutacij pojavi kar nekaj vprašanj. Najprej se lahko vprašamo, kako težko je skonstruirati tako permutacijo, oziroma ali kakšna taka permutacija sploh obstaja. Nadalje, koliko takih permutacij obstaja. Kaj še lahko povemo o permutacijah z lastnostjo $\lambda$ in množici vseh $\lambda$-permutacij? Eno izmed pomembnejših vprašanj, ki se porajajo ob raziskovanju lastnosti množice $\lambda$-permutacij, je vprašanje njene omejenosti. Če je ta množica navzgor omejena, namreč obstaja optimalna $\lambda$-permutacija, ki ustvari največ konvergentnih vrst. Če je to res in če je ta optimalna perutacija različna od identitete, bi bilo bolje, da bi, kar se tiče seštevanja vrst, namesto običajnega uporabljali drugačno zaporedje naravnih števil, torej zaporedje, ki ga narekuje dobljena optimalna permutacija? Nazadnje pa se lahko vprašamo še, ali nam $\lambda$ permutacije lahko pomagajo pri vsaki pogojno divergentni vrsti oziroma ali za vsako pogojno divergentno vrsto $\sum^{\infty}_{n=1}a_n$ obstaja $\lambda$-permutacija $\sigma$, da $\sum^{\infty}_{n=1}a_{\sigma (n)}$ konvergira. To so vprašanja, na katera bo odgovorjeno v tej diplomski nalogi.
 
-\section{Primer konstrukcije $\lambda$-permutacije}
+\section{Primer konstrukcije $\lambda$-permutacije} \label{sec:konstrukcija}
 
 Oglejmo si primer konstrukcije permutacije z lastnostjo $\lambda$. S tem bomo tudi pokazali, da množica $\lambda$-permutacij ni prazna.
 Naravna števila najprej razvrstimo v bloke naraščajoče velikosti na naslednji način:
@@ -128,37 +128,46 @@ Permutacijo $\sigma$ uporabimo na členih številske vrste $\sum^{\infty}_{n=1}a
 \end{equation}
 Tu je $q^2$ največji popolni kvadrat, manjši od $N$, in $A \geq q^2$, $B \geq q^2$ ter $A \leq B$. Vsak blok v zaporedju (\ref{eq:1}) se namreč konča s popolnim kvadratom, tako da so indeksi členov v delni vsoti $S_{q^2}=a_1+a_2+\ldots+a_{q^2}$ vsa števila iz blokov od prvega do vključno tistega, ki se konča s $q^2$. Ker se permutiranje členov izvaja samo znotraj blokov, bo imela delna vsota $\tilde{S_{q^2}}$ enake člene kot $S_{q^2}$, le v drugačnem vrstnem redu. Delna vsota $S_4$ na primer izgleda tako: $S_4 = a_1+a_2+a_3+a_4$, medtem ko je $\tilde{S}_4$ taka: $\tilde{S}_4=a_{\sigma(1)}+a_{\sigma(2)}+a_{\sigma(3)}+a_{\sigma(4)}=a_1+a_3+a_4+a_2$. Vidimo, da sta obe delni vsoti enaki, saj vsebujeta vse člene z indeksi iz prvih dveh blokov. Za delne vsote  permutirane vrste torej velja: $\tilde{S_n}=\tilde{S_{q^2}}+Q=S_{q^2}+Q$, kjer je $q^2$ največji popolni kvadrat, manjši od $n$, $Q$ pa vsebuje člene z indeksi, večjimi od $q^2$. Po kontrukciji permutacije $\sigma$ velja, da če $Q$ vsebuje člena $a_C$ in $a_B$, kjer je $C < B$, potem bo vseboval tudi vse člene $a_i$, kjer je $C<i<B$. Torej lahko zapišemo $Q=S_B-S_{C-1}$, od koder sledi enačba (\ref{eq:3}).
 
+Po Cauchyjevem kriteriju za konvergenco zaporedij vrsta $\sum^{\infty}_{n=1}a_n$ konvergira natanko tedaj, ko za vsak $\epsilon >0$ obstaja $n_0 \in \N$, da za vsak par indeksov $m,n\in \N \textrm{, }m>n\geq n_0$ velja $|S_m-S_n|<\epsilon$. Ker je vsaka delna vsota vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ končna linearna kombinacija delnih vsot vrste $\sum^{\infty}_{n=1}a_{n}$, bo Cauchyjev kriterij, če bo veljal za vrsto $\sum^{\infty}_{n=1}a_{n}$, veljal tudi za $\sum^{\infty}_{n=1}a_{\sigma(n)}$. S tem je zadoščeno prvi točki iz definicije $\lambda$-permutacije. %natančnejša razlaga?
 
-%\begin{align*}
-%\tilde{S_1}&=a_{\sigma(1)}=a_1=S_1\\
-%\tilde{S_3}&=a_{\sigma(1)}+S_1+(S_4-S_2)\\
-%\tilde{S_7}&=S_4+(S_8-S_5)\\
-%\end{align*}
-
-%V splošnem velja $\tilde{S_N}=S_{q^2}+(S_A-S_B)$, kjer je $q^2$ največji popolni kvadrat, manjši od $N$, in $A \geq q^2$ ter $B \geq q^2$.
-Po Cauchyjevem kriteriju za konvergenco zaporedij vrsta $\sum^{\infty}_{n=1}a_n$ konvergira natanko tedaj, ko za vsak $\epsilon >0$ obstaja $n_0 \in \N$, da za vsak par indeksov $m,n\in \N \textrm{, }m>n\geq n_0$ velja $|S_m-S_n|<\epsilon$. Ker je vsaka delna vsota vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ končna linearna kombinacija delnih vsot vrste $\sum^{\infty}_{n=1}a_{n}$, bo Cauchyjev kriterij, če bo veljal za vrsto $\sum^{\infty}_{n=1}a_{n}$, veljal tudi za $\sum^{\infty}_{n=1}a_{\sigma(n)}$. S tem je zadoščeno prvi točki iz definicije $\lambda$-permutacije. 
 Da pokažemo, da je $\sigma$ res $\lambda$-permutacija, moramo poiskati še pogojno divergentno vrsto, iz katere bo permutacija $\sigma$ ustvarila pogojno konvergentno vrsto. Primer take divergente vrste je:
 $$1+\left (-\frac{1}{2}-\frac{1}{2}+\frac{1}{2}\right )+\left (\frac{1}{3}+\frac{1}{3}+\frac{1}{3}-\frac{1}{3}-\frac{1}{3} \right )+\left (-\frac{1}{4}-\frac{1}{4}-\frac{1}{4}-\frac{1}{4}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4}\right )+$$ $$+\left (\frac{1}{5}+\frac{1}{5}+\frac{1}{5}+\frac{1}{5}+\frac{1}{5}-\frac{1}{5}-\frac{1}{5}-\frac{1}{5}-\frac{1}{5} \right )+\dots $$
+%kako naj razložim, da divergira?
 
 Ko na zgornji vrsti uporabimo permutacijo $\sigma$, dobimo:
 $$1-\frac{1}{2}+\frac{1}{2}-\frac{1}{2}+\frac{1}{3}-\frac{1}{3}+\frac{1}{3}-\frac{1}{3}+\frac{1}{3}-\frac{1}{4}+\frac{1}{4}-\frac{1}{4}+\frac{1}{4}-\frac{1}{4}+\frac{1}{4}-\frac{1}{4}+\frac{1}{5}-\frac{1}{5} \pm \dots$$
-Dobljena vrsta konvergira po testu za alternirajoče vrste.
+Dobljena vrsta konvergira po Leibnizevem testu za alternirajoče vrste, ki pravi, da alternirajoča vrsta konvergira, kadar ima zaporedje absolutnih vrednosti njenih členov limito 0. %bolj natančna razlaga?
+
+Našli smo pogojno divergentno vrsto, ki jo $\sigma$ spremeni v konvergentno. Permutacija $\sigma$ torej zadošča obema točkama v definiciji $\lambda$-permutacije. S tem smo dokazali, da obstaja vsaj ena $\lambda$-permutacija. Je to edina $\lambda$-permutacija ali obstaja še kakšna? Da odgovorimo na to vprašanje, si moramo najprej ogledati nekaj lastnosti $\lambda$-permutacij.
 
 \section{Lastnosti $\lambda$-permutacij}
-
+%tu je treba najbrž povedati, kaj se bo opazovalo v tem poglavju in zakaj je dobro gledati te lastnosti
 \subsection{Ohranjanje konvergence in vsote}
 
+\begin{definicija}
 Pravimo, da permutacija \emph{ohranja konvergenco}, kadar iz konvergence vrste $\sum^{\infty}_{n=1}a_n$ sledi konvergenca vrste $\sum^{\infty}_{n=1}a_{\sigma (n)}$, in \emph{ohranja vsoto}, kadar velja, da je $\sum^{\infty}_{n=1}a_n=\sum^{\infty}_{n=1}a_{\sigma (n)}$.
+\end{definicija}
 
-Za lažje obravnavanje lastnosti $\lambda$-permutacij vpeljimo notacijo
+Za lažje obravnavanje lastnosti $\lambda$-permutacij vpeljimo notacijo %ali mora biti to definicija??
 
 $$[c,d]_{\Z}=\{x \in \Z^+ ; c \leq x \leq d \},$$
 
-kjer sta $c$ in $d$ naravni števili, za kateri velja $c\leq d$. Naj bo sedaj $\sigma$ neka permutacija naravnih števil in $n$ naravno število. Zapišemo lahko:
+kjer sta $c$ in $d$ naravni števili, za kateri velja $c\leq d$. Z notacijo $[2,5]$ na primer označimo množico $\{2,3,4,5\}$.
+
+Naj bo sedaj $\sigma$ neka permutacija naravnih števil in $n$ naravno število. Zapišemo lahko:
 
 $$\{ \sigma (1), \sigma (2), \ldots \sigma (n) \} = [c^n_1, d^n_1]_{\Z} \cup [c^n_2, d^n_2]_{\Z} \cup \cdots \cup [c^n_{b_n}, d^n_{b_n}]_{\Z},$$
 
-pri čemer je $c^n_i \leq d^n_i$ in $c^n_{i+1} \geq d^n_i +2$. Z $b_n$ smo označili število blokov oblike $[c^n_i, d^n_i]_{\Z}$, ki sestavljajo zgornjo unijo. Za permutacijo $\sigma$ lahko definiramo zaporedje $\{b_n\}^{\infty}_{n=1}$, ki ga imenujemo \emph{zaporedje števil blokov}.
+pri čemer je $c^n_i \leq d^n_i$ in $c^n_{i+1} \geq d^n_i +2$. Z $b_n$ smo označili število blokov oblike $[c^n_i, d^n_i]_{\Z}$, ki sestavljajo zgornjo unijo. Za permutacijo $\sigma$ lahko definiramo zaporedje $\{b_n\}^{\infty}_{n=1}$, ki ga imenujemo \emph{zaporedje števil blokov}. %posebej definicija zaporedja števil blokov?
+
+\begin{primer}
+Vzemimo permutacijo $\sigma$, ki smo jo skonstruirali v poglavju \ref{sec:konstrukcija}, torej $$\sigma = \bigg(\begin{matrix}
+    1 & 2 & 3 & 4 & 5 & 6 & \cdots   \\   1 & 3 & 4 & 2 & 7 & 8 & \cdots
+  \end{matrix}\bigg).$$ Potem lahko zapišemo $\{\sigma(1), \sigma(2), \ldots, \sigma(8) \} = \{ 1,3,4,2,7,8\} = [1,4]_{\Z} \cup [7,8]_{\Z}$. V tem primeru je število blokov $b_8=2$, saj lahko $\{\sigma(1), \sigma(2), \ldots, \sigma(8) \}$ zapišemo kot unijo najmanj dveh blokov oblike  $[c^n_i, d^n_i]_{\Z}$.
+Oglejmo si še zaporedje števil blokov za permutacijo $\sigma$. Očitno je $b_1=1$. Ker je $\{\sigma(1), \sigma(2) \} = \{ 1,3\} = [1,1]_{\Z} \cup [3,3]_{\Z}$, je $b_2=2$. Za $n=3$ velja $\{\sigma(1), \sigma(2), \sigma(3) \} = \{ 1,3,4\} = [1,1]_{\Z} \cup [3,4]_{\Z}$, torej je $b_3$=2, in tako dalje. Zaporedje števil blokov za permutacijo $\sigma$ je torej videti tako: $1\:2\:2\:1\:2\:2\:\ldots$.
+\end{primer}
+
+Zgoraj vpeljane notacije bodo zelo uporabne pri dokazu sledeče trditve, ki govori o povezavi med ohranjanjem konvergence in vsote.
 
 \begin{trditev}
 Naj bo $\sigma$ permutacija naravnih števil. Naslednje trditve so ekvivalentne:
@@ -168,6 +177,13 @@ Naj bo $\sigma$ permutacija naravnih števil. Naslednje trditve so ekvivalentne:
 \item permutacija $\sigma$ ohranja vsoto
 \end{itemize}
 \end{trditev}
+
+\begin{proof}
+
+
+\end{proof}
+
+
 
 \begin{posledica}
 Naj bo $\sigma$ permutacija, ki ohranja konvergenco in $\sum^{\infty}_{n=1}a_n$ konvergentna vrsta. Potem obstaja tako število $B\in \mathbb{N}$, da je vsaka delna vsota vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ linearna kombinacija največ $B$ delnih vsot prvotne vrste.
