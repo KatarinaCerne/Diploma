@@ -156,9 +156,12 @@ kjer sta $c$ in $d$ naravni števili, za kateri velja $c\leq d$. Z notacijo $[2,
 
 Naj bo sedaj $\sigma$ neka permutacija naravnih števil in $n$ naravno število. Zapišemo lahko:
 
-$$\{ \sigma (1), \sigma (2), \ldots \sigma (n) \} = [c^n_1, d^n_1]_{\Z} \cup [c^n_2, d^n_2]_{\Z} \cup \cdots \cup [c^n_{b_n}, d^n_{b_n}]_{\Z},$$
+\begin{equation} \label{eq:4}
+\{ \sigma (1), \sigma (2), \ldots \sigma (n) \} = [c^n_1, d^n_1]_{\Z} \cup [c^n_2, d^n_2]_{\Z} \cup \cdots \cup [c^n_{b_n}, d^n_{b_n}]_{\Z},
+\end{equation} 
 
 pri čemer je $c^n_i \leq d^n_i$ in $c^n_{i+1} \geq d^n_i +2$. Z $b_n$ smo označili število blokov oblike $[c^n_i, d^n_i]_{\Z}$, ki sestavljajo zgornjo unijo. Za permutacijo $\sigma$ lahko definiramo zaporedje $\{b_n\}^{\infty}_{n=1}$, ki ga imenujemo \emph{zaporedje števil blokov}. %posebej definicija zaporedja števil blokov?
+V nadaljevanju bomo rabili še notacijo $M_n=d^n_{b_n}+1=max(\{ \sigma (1), \sigma (2), \ldots \sigma (n) \})+1$, kjer je $d^n_{b_n}$ število, s katerim se konča zadnji blok v notaciji \ref{eq:4}.
 
 \begin{primer}
 Vzemimo permutacijo $\sigma$, ki smo jo skonstruirali v poglavju \ref{sec:konstrukcija}, torej $$\sigma = \bigg(\begin{matrix}
@@ -171,15 +174,41 @@ Zgoraj vpeljane notacije bodo zelo uporabne pri dokazu sledeče trditve, ki govo
 
 \begin{trditev}
 Naj bo $\sigma$ permutacija naravnih števil. Naslednje trditve so ekvivalentne:
-\begin{itemize}
-\item permutacija $\sigma$ ohranja konvergenco
-\item zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ je omejeno
-\item permutacija $\sigma$ ohranja vsoto
-\end{itemize}
+\begin{enumerate}
+\item permutacija $\sigma$ ohranja konvergenco \label{itm:1}
+\item zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ je omejeno \label{itm:2}
+\item permutacija $\sigma$ ohranja vsoto \label{itm:3}
+\end{enumerate}
 \end{trditev}
 
 \begin{proof}
+Najprej dokažimo, da iz (\ref{itm:1}) sledi (\ref{itm:2}).
+Naj bo $\sigma$ neka permutacija naravnih števil, ki ohranja konvergenco. Dokaza se lotimo s protislovjem. Predpostavimo, da je zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ permutacije $\sigma$ neomejeno. Poiskali bomo tako konvergentno vrsto $\sum^{\infty}_{n=1}a_n$, da bo $\sum^{\infty}_{n=1}a_{\sigma (n)}$ divergentna, kar je v protislovju s predpostavko, da $\sigma$ ohranja konvergenco. 
 
+Izberimo tak $n_1\in \N$, da je $c_1^{n_1}=1$, kjer je  $c_1^{n_1}$ število,s katerim se začne prvi blok v izrazu $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \} = [c^{n_1}_1, d^{n_1}_1]_{\Z} \cup [c^{n_1}_2, d^{n_1}_2]_{\Z} \cup \cdots \cup [c^{n_1}_{b_n}, d^{n_1}_{b_n}]_{\Z}$. Drugače rečeno, naj bo $1\in \{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$. Za tak $n_1$ za vsak $k\in \N$, za katerega velja $1 \leq k \leq M_{n_1}$ definiramo člen $a_k$ zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$ na naslednji način:
+$$a_k = 
+\left\{ 
+\begin{array}{ccc}
+1&;&k=d_i^{n_1} za nek i, 1\leq i \leq b_{n_1}\\
+-1&;&k=d_i^{n_1}+1 za nek i, 1\leq i \leq b_{n_1}\\
+0&;&sicer\\
+\end{array}
+\right. 
+$$
+Če imamo na primer permutacijo $\sigma$ kot v poglavju \ref{sec:konstrukcija} in $n_1=6$, potem je $\{ \sigma (1), \sigma (2), \ldots \sigma (6) \} = \{1, 3, 4, 2, 7, 8 \}= [1,4]_{\Z} \cup [7,8]_{\Z}$, za zaporedje $\{a_n\}^{9}_{n=1}$ pa velja, da je $a_4=1,\ a_5=-1,\ a_8 =1$ in $a_9=-1$, vsi ostali členi pa so enaki nič.
+
+Oglejmo si nekaj značilnosti tega zaporedja. Najprej opazimo, da velja enakost $\sum_{k=1}^{n_1}a_{\sigma(k)}=b_{n_1}\geq 1$. Členi zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$, ki so enaki $-1$ namreč zagotovo niso vključeni v to vsoto. Členi, enaki $a_k=-1$, so namreč tisti, za katere je $k=d_i^{n_1}+1$, $d_i^{n_1}+1$ pa za noben $i$ ni element množice $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$, saj mora biti med $d_i^{n_1}$ in $c_{i+1}^{n_1}$ vsaj eno število, ki ni v množici $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$. V nasprotnem primeru bi namesto $[c_i^{n_1},d_i^{n_1}] \cup [c_{i+1}^{n_1},d_{i+1}^{n_1}]$ v izrazu \ref{eq:4} pisali kar $[c_i^{n_1},d_{i+1}^{n_1}]$. 
+
+Členi zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$, ki so enaki $a_k=1$, so zagotovo vsi vključeni v zgornjo vsoto, saj zanje velja, da je $k=d_i^{n_1}$ za $1\leq i\leq b_{n_1}, d_i^{n_1}$ pa je za vsak tak $i$ element množice $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$. Ta množica torej vsebuje ravno $b_{n_1}$ elementov oblike $d_i^{n_1}$, torej bo v vsoti $\sum_{k=1}^{n_1}a_{\sigma(k)}$ ravno $b_{n_1}$ členov, ki bodo enaki $1$, vsi ostali pa bodo ničelni. Od tod torej sledi $\sum_{k=1}^{n_1}a_{\sigma(k)}=b_{n_1}$, da je $b_{n_1}\geq 1$, pa je očitno.
+
+Poleg tega vidimo še, da je $\sum_{k=1}^{M_{n_1}}a_k=0$. Členi zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$, ki so enaki $1$ in $-1$ namreč vselej nastopajo v parih. Če je $a_i=1$, potem je $a_{i+1}=-1$. Zadnji člen vsote je $a_{M_{n_1}}=-1$, saj je $M_{n_1}=d_{b_{n_1}}^{n_1}+1$. V vsoti $\sum_{k=1}^{M_{n_1}}a_k=0$ je tako enako število členov, enakih $1$ in členov, enakih $-1$, ki se med sabo odštejejo, vsi ostali členi v vsoti pa so ničelni.
+
+Na podoben način pokažemo tudi, da je $\sum_{k=1}^{n}a_k=0$ ali $1$, kjer za $n$ velja $1\geq n\geq M_{n_1}$. Za tako vsoto namreč obstajajo tri možnosti: ali je zadnji člen enak $0$ ali $1$ ali pa $-1$. Če je enak $0$ ali $-1$, bo število členov, enakih $1$, enako številu členov, enakih $-1$ in bo vsota enaka nič. Če pa je zadnji člen enak $1$, bo število členov, enakih $1$, za eno večje od števila členov, enakih $-1$, ($-1$ namreč vedno sledi takoj za $1$), torej bo vsota enaka $1$.
+
+Do sedaj smo skonstruirali zaporedje $\{a_n\}^{M_{n_1}}_{n=1}$, radi pa bi imeli zaporedje $\{a_n\}^{\infty}_{n=1}$. Preostanek zaporedja skonstruiramo rekurzivno: za vsak $j\in \N,\ j>1$ izberemo $n_j$, da je $M_{n_j}>M_{n_{j+1}}$.
+
+
+naslednja implikacija, ki jo moramo dokazati
 
 \end{proof}
 
