@@ -182,16 +182,18 @@ Naj bo $\sigma$ permutacija naravnih števil. Naslednje trditve so ekvivalentne:
 \end{trditev}
 
 \begin{proof}
-Najprej dokažimo, da iz (\ref{itm:1}) sledi (\ref{itm:2}).
+Da iz (\ref{itm:3}) sledi (\ref{itm:1}) je očitno.
+
+Dokažimo sedaj, da iz (\ref{itm:1}) sledi (\ref{itm:2}).
 Naj bo $\sigma$ neka permutacija naravnih števil, ki ohranja konvergenco. Dokaza se lotimo s protislovjem. Predpostavimo, da je zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ permutacije $\sigma$ neomejeno. Poiskali bomo tako konvergentno vrsto $\sum^{\infty}_{n=1}a_n$, da bo $\sum^{\infty}_{n=1}a_{\sigma (n)}$ divergentna, kar je v protislovju s predpostavko, da $\sigma$ ohranja konvergenco. 
 
 Izberimo tak $n_1\in \N$, da je $c_1^{n_1}=1$, kjer je  $c_1^{n_1}$ število,s katerim se začne prvi blok v izrazu $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \} = [c^{n_1}_1, d^{n_1}_1]_{\Z} \cup [c^{n_1}_2, d^{n_1}_2]_{\Z} \cup \cdots \cup [c^{n_1}_{b_n}, d^{n_1}_{b_n}]_{\Z}$. Drugače rečeno, naj bo $1\in \{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$. Za tak $n_1$ za vsak $k\in \N$, za katerega velja $1 \leq k \leq M_{n_1}$ definiramo člen $a_k$ zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$ na naslednji način:
 $$a_k = 
 \left\{ 
 \begin{array}{ccc}
-1&;&k=d_i^{n_1} za nek i, 1\leq i \leq b_{n_1}\\
--1&;&k=d_i^{n_1}+1 za nek i, 1\leq i \leq b_{n_1}\\
-0&;&sicer\\
+1&;&k=d_i^{n_1}\textrm{ za nek i, }1\leq i \leq b_{n_1}\\
+-1&;&k=d_i^{n_1}+1\textrm{ za nek i, }1\leq i \leq b_{n_1}\\
+0&;&\textrm{sicer}\\
 \end{array}
 \right. 
 $$
@@ -205,10 +207,29 @@ Poleg tega vidimo še, da je $\sum_{k=1}^{M_{n_1}}a_k=0$. Členi zaporedja $\{a_
 
 Na podoben način pokažemo tudi, da je $\sum_{k=1}^{n}a_k=0$ ali $1$, kjer za $n$ velja $1\geq n\geq M_{n_1}$. Za tako vsoto namreč obstajajo tri možnosti: ali je zadnji člen enak $0$ ali $1$ ali pa $-1$. Če je enak $0$ ali $-1$, bo število členov, enakih $1$, enako številu členov, enakih $-1$ in bo vsota enaka nič. Če pa je zadnji člen enak $1$, bo število členov, enakih $1$, za eno večje od števila členov, enakih $-1$, ($-1$ namreč vedno sledi takoj za $1$), torej bo vsota enaka $1$.
 
-Do sedaj smo skonstruirali zaporedje $\{a_n\}^{M_{n_1}}_{n=1}$, radi pa bi imeli zaporedje $\{a_n\}^{\infty}_{n=1}$. Preostanek zaporedja skonstruiramo rekurzivno: za vsak $j\in \N,\ j>1$ izberemo $n_j$, da je $M_{n_j}>M_{n_{j+1}}$.
+Do sedaj smo skonstruirali zaporedje $\{a_n\}^{M_{n_1}}_{n=1}$, radi pa bi imeli zaporedje $\{a_n\}^{\infty}_{n=1}$. Preostanek zaporedja konstruiramo rekurzivno: za vsak $j\in \N,\ j>1$ moramo izbrati $n_j$, da je $M_{n_j}>M_{n_{j-1}}$ in za vsak $k$, ki ustreza $M_{n_{j-1}}<k\leq M_{n_j}$ moramo definirati $a_k$ tako, da bo veljalo $\sum_{k=1}^{M_{n_j}}a_k=0$.
 
+Recimo, da je $j>1$ in da smo v prejšnjem koraku že izbrali tak $n_{j-1}$ in take $a_k$ za $1\leq k\leq M_{n_j}$, da je veljalo $\sum_{k=1}^{M_{n_{j-1}}}a_k=0$. Ker smo predpisali, da je zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ permutacije $\sigma$ neomejeno, lahko izberemo tak $n_j$, da je $d_1^{n_j}>M_{n_{j-1}}$ in $b_{n_j}\geq j^2$. %zakaj to naredimo
+Definirajmo sedaj $a_k$ za $M_{n_{j-1}}<k\leq M_{n_j}$:
 
-naslednja implikacija, ki jo moramo dokazati
+$$a_k = 
+\left\{ 
+\begin{array}{ccc}
+\frac{1}{j}&;&k=d_i^{n_j}\textrm{ za nek i, }1\leq i \leq b_{n_1}\\
+-\frac{1}{j}&;&k=d_i^{n_j}+1\textrm{ za nek i, }1\leq i \leq b_{n_1}\\
+0&;&\textrm{sicer}\\
+\end{array}
+\right. 
+$$
+
+%Ker smo izbrali $n_j$ tako, da je $d_1^{n_j}>M_{n_{j-1}}$, velja $\{ \sigma (1), \sigma (2), \ldots \sigma (n_j) \} = [1, d_1^{n_j}]_{\Z} \cup [c_2^{n_j}, d_2^{n_j}]_{\Z} \cup \cdots \cup [c^{n_j}_{b_n}, d^{n_j}_{b_n}]_{\Z}$, kjer $ [1, d_1^{n_j}]_{\Z}$ vsebuje vsa števila med $1$ in $M_{n_j}$.
+%ta del dokaza mi ni čisto jasen
+Podobno kot pri $j=1$ tudi tu vidimo, da je $\sum_{k=1}^{n_j}a_{\sigma(k)}=\frac{b_{n_j}}{j}\geq j$, $\sum_{k=1}^{M_{n_1}}a_k=0$ in $\sum_{k=1}^{n}a_k=0$ ali $\frac{1}{j}$ za $M_{n_{j-1}}<n<M_{n_j}$.%zakaj rabim ta zadnji del
+
+Če sedaj pošljemo $j$ proti neskončno, dobimo, $\sum_{k=1}^{\infty}a_k=0$. Ta vrsta torej konvergira. Po drugi strani pa $\sum_{k=1}^{M_{n_1}}a_{\sigma(k)}$ divergira, saj je $\sum_{k=1}^{n_j}a_{\sigma(k)}\geq j$ za vsak $j$. Torej $\sigma$ ne ohranja konvergence, kar je v nasprotju z začetno predpostavko. Sledi, da je zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ omejeno.
+
+Zadnja implikacija, ki jo moramo dokazati, je, da iz (\ref{itm:2}) sledi (\ref{itm:3}).
+
 
 \end{proof}
 
