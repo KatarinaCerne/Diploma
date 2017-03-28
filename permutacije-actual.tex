@@ -229,15 +229,23 @@ Podobno kot pri $j=1$ tudi tu vidimo, da je $\sum_{k=1}^{n_j}a_{\sigma(k)}=\frac
 Če sedaj pošljemo $j$ proti neskončno, dobimo, $\sum_{k=1}^{\infty}a_k=0$. Ta vrsta torej konvergira. Po drugi strani pa $\sum_{k=1}^{M_{n_1}}a_{\sigma(k)}$ divergira, saj je $\sum_{k=1}^{n_j}a_{\sigma(k)}\geq j$ za vsak $j$. Torej $\sigma$ ne ohranja konvergence, kar je v nasprotju z začetno predpostavko. Sledi, da je zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ omejeno.
 
 Zadnja implikacija, ki jo moramo dokazati, je, da iz (\ref{itm:2}) sledi (\ref{itm:3}).
-
-
+Imejmo permutacijo naravnih števil $\sigma$ in naj bo $\{b_n\}_{n=1}^{\infty}$ njeno zaporedje števil blokov, ki je omejeno. Naj bo $\{a_k\}_{k=1}^{\infty}$ tako zaporedje, da velja $\sum_{k=1}^{\infty}a_k=L\in \R$.Pokazati hočemo, da pri takih pogojih $\sigma$ ohranja vsoto, torej, da je $\sum_{k=1}^{\infty}a_k=\sum_{k=1}^{\infty}a_{\sigma(k)}=L$. 
+Označimo s $S(n)=\sum_{k=1}^{n}a_k$ delne vsote vrste $\sum_{k=1}^{\infty}a_k$. Iz definicije vsote vrste sledi, da je $\lim_{n\to \infty}S(n)=L$. Oglejmo si sedaj delovanje permutacije $\sigma$. Naj bo $n$ tako velik, da bo v zapisu $\{ \sigma (1), \sigma (2), \ldots \sigma (n) \} = [c^n_1, d^n_1]_{\Z} \cup [c^n_2, d^n_2]_{\Z} \cup \cdots \cup [c^n_{b_n}, d^n_{b_n}]_{\Z}$ veljalo, da je $c^n_1$ enak $1$. Potem je 
+\begin{equation} \label{eq:5}
+\sum_{k=1}^{n}a_{\sigma(k)}=\sum_{k=1}^{d_1^n}a_k+\sum_{i=2}^{b_n}\sum_{k=c_i^n}^{d_i^n}a_k = S(d_1^n)+\sum_{i=2}^{b_n}(S(d_i^n)-S(c_i^n-1)).
+\end{equation}
+Ko pošljemo $n$ proti neskončno, gre $d_1^n$ proti neskončno. Torej gre $S(d_1^n)$ proti $L$. Oglejmo si še limito izraza $(S(d_i^n)-S(c_i^n-1))$. Ko gre $d_1^n$ proti neskončno, se blok  $[c^n_1, d^n_1]_{\Z}$ veča in zavzema vedno več števil, posledično pa se ostali bloki manjšajo. Torej sta števili $d_i^n$ in $c_i^n-1$, ko gre $n$ proti neskončno, vedno bližje eno drugemu. Zato gre $(S(d_i^n)-S(c_i^n-1))$ proti $0$. Dobimo torej $$\sum_{k=1}^{\infty}a_{\sigma(k)}=\lim_{n \to \infty}\sum_{k=1}^{\infty}a_{\sigma(k)}=L.$$
+%natančnejša razlaga zadnjega dela
 \end{proof}
 
-
-
+Enakost \ref{eq:5}, ki smo jo uporabili v zgornjem dokazu, ima naslednjo posledico:
 \begin{posledica}
 Naj bo $\sigma$ permutacija, ki ohranja konvergenco in $\sum^{\infty}_{n=1}a_n$ konvergentna vrsta. Potem obstaja tako število $B\in \mathbb{N}$, da je vsaka delna vsota vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ linearna kombinacija največ $B$ delnih vsot prvotne vrste.
 \end{posledica}
+
+\begin{proof}
+Naj bo $\sigma$ permutacija, ki ohranja konvergenco. Potem je njeno zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ omejeno, torej obstaja njegova limita $\lim_{n \to \infty}b_n = C\in \R$. Naj bo $\tilde{S}(n)=\sum_{k=1}^{n}a_{\sigma(k)}$ neka delna vsota vrste $\sum_{k=1}^{\infty}a_{\sigma(k)}$. Po enakosti \ref{eq:5} velja: $$\tilde{S}(n)=S(d_1^n)+\sum_{i=2}^{b_n}(S(d_i^n)-S(c_i^n-1))\leq S(d_1^n)+C(S(d_i^n)-S(c_i^n-1)).$$ Vidimo, da je $\tilde{S}(n)$ linearna kombinacija $B=2*C+1$ delnih vsot $S(i)$ prvotne vrste.
+\end{proof}
 
 \subsection{Množici $\mathcal{O}$ in $\mathcal{N}$}
 
