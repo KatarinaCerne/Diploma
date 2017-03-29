@@ -244,7 +244,7 @@ Naj bo $\sigma$ permutacija, ki ohranja konvergenco in $\sum^{\infty}_{n=1}a_n$ 
 \end{posledica}
 
 \begin{proof}
-Naj bo $\sigma$ permutacija, ki ohranja konvergenco. Potem je njeno zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ omejeno, torej obstaja njegova limita $\lim_{n \to \infty}b_n = C\in \R$. Naj bo $\tilde{S}(n)=\sum_{k=1}^{n}a_{\sigma(k)}$ neka delna vsota vrste $\sum_{k=1}^{\infty}a_{\sigma(k)}$. Po enakosti \ref{eq:5} velja: $$\tilde{S}(n)=S(d_1^n)+\sum_{i=2}^{b_n}(S(d_i^n)-S(c_i^n-1))\leq S(d_1^n)+C(S(d_i^n)-S(c_i^n-1)).$$ Vidimo, da je $\tilde{S}(n)$ linearna kombinacija $B=2*C+1$ delnih vsot $S(i)$ prvotne vrste.
+Naj bo $\sigma$ permutacija, ki ohranja konvergenco. Potem je njeno zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ omejeno, torej obstaja njegova limita $\lim_{n \to \infty}b_n = C\in \R$. Naj bo $\tilde{S}(n)=\sum_{k=1}^{n}a_{\sigma(k)}$ neka delna vsota vrste $\sum_{k=1}^{\infty}a_{\sigma(k)}$. Po enakosti \ref{eq:5} velja: $$\tilde{S}(n)=S(d_1^n)+\sum_{i=2}^{b_n}(S(d_i^n)-S(c_i^n-1))\leq S(d_1^n)+C(S(d_i^n)-S(c_i^n-1)).$$ Vidimo, da je $\tilde{S}(n)$ linearna kombinacija $B=2C+1$ delnih vsot $S(i)$ prvotne vrste.
 \end{proof}
 
 \subsection{Množici $\mathcal{O}$ in $\mathcal{N}$}
@@ -253,17 +253,34 @@ Naj bo $\mathcal{O}$ množica vseh permutacij naravnih števil, ki ohranjajo kon
 
 \begin{trditev}\label{trd:o in n}
 Velja:
-\begin{itemize}
-\item če je $\sigma$ element množice $\mathcal{N}$  in $\beta$ element množice $\mathcal{O}$, potem je tudi $\sigma \circ \beta$ element $\mathcal{N}$
-\item če je $\sigma$ element množice $\mathcal{N}$, potem $\sigma^{-1}$ ni element $\mathcal{O}$
-\item če je $\sigma$ element $\mathcal{N}$, potem je tudi $\sigma \circ \sigma$ element $\mathcal{N}$
-\item $\mathcal{N}$ je polgrupa za kompozitum permutacij, ni pa grupa
-\end{itemize}
+\begin{enumerate}
+\item če je permutacija $\sigma$ element množice $\mathcal{N}$, potem $\sigma^{-1}$ ni element $\mathcal{O}$ \label{itm1:1}
+\item če je permutacija $\sigma$ element množice $\mathcal{N}$  in $\beta$ element množice $\mathcal{O}$, potem je tudi $\sigma \circ \beta$ element $\mathcal{N}$ \label{itm1:2}
+\item če je permutacija $\sigma$ element $\mathcal{N}$, potem je tudi $\sigma \circ \sigma$ element $\mathcal{N}$ \label{itm1:3}
+\item množica $\mathcal{N}$ je polgrupa za kompozitum permutacij, ni pa grupa \label{itm1:4}
+\item permutacija $\sigma$ je element množice $\mathcal{O}$ natanko tedaj ko tako $\sigma$ kot tudi $\sigma^{-1}$ ohranjata konvergenco.
+\end{enumerate}
 \end{trditev}
+
+\begin{proof}
+\begin{enumerate}
+\item Naj bo $\sigma$ permutacija iz množice $\mathcal{N}$. Ker $\sigma$ ohranja konvergenco, obstaja neka pogojno divergentna vrsta $\sum_{n=1}^{\infty}a_n$, da je $\sum_{n=1}^{\infty}\sigma(a_n)$ konvergentna. Delujmo sedaj na vrsto  $\sum_{n=1}^{\infty}\sigma(a_n)$ s permutacijo $\sigma^{-1}$. Dobimo vrsto $\sum_{n=1}^{\infty}\sigma^{-1}(\sigma(a_n))=\sum_{n=1}^{\infty}a_n$, ki je divergentna. Permutacija $\sigma^{-1}$ torej ne ohranja konvergence in zato ni element množice $\mathcal{O}$.
+
+\item Naj bo $\sigma \in \mathcal{N}$ in $\beta \in \mathcal{O}$. Tako $\sigma$ kot tudi $\beta$ ohranjata konvergenco, od koder sledi, da tudi njun kompozitum $\sigma \circ \beta$ ohranja konvergenco. Ker je $\sigma$ element množice $\mathcal{N}$, obstaja neka pogojno divergentna vrsta $\sum_{n=1}^{\infty}a_n$, da $\sum_{n=1}^{\infty}\sigma(a_n)$ konvergira. Ker permutacija $\beta$ ohranja konvergenco, je tudi $\sum_{n=1}^{\infty}\beta(\sigma(a_n))=\sum_{n=1}^{\infty}(\beta \circ \sigma)(a_n)$ konvergentna. Torej obstaja pogojno divergentna vrsta, ki jo permutacija $\beta \circ \sigma$ spremeni v konvergentno. Sledi, da je $\beta \circ \sigma \in \mathcal{N}$.
+
+\item Imejmo permutacijo $\sigma \in \mathcal{N}$. Ker $\sigma$ ohranja konvergenco, jo ohranja tudi $\sigma \circ \sigma$. Ker je $\sigma \in \mathcal{N}$, pa obstaja tudi pogojno divergentna vrsta $\sum_{n=1}^{\infty}a_n$, da vrsta $\sum_{n=1}^{\infty}\sigma(a_n)$ konvergira. To isto vrsto $\sum_{n=1}^{\infty}a_n$ tudi $\sigma \circ \sigma$ preslika v konvergentno, saj $\sigma$ ohranja konvergenco. Sledi, da je $\sigma \circ \sigma \in \mathcal{N}$.
+
+\item Najprej dokažimo, da je množica $\mathcal{N}$ polgrupa za kompozitum. Dokazati moramo zaprtost operacije in asociativnost. Asociativnost kompozituma je očitna, zaprtost operacije pa sledi iz točke \ref{itm1:3} v trditvi \ref{trd:o in n}. Pokažimo še, da $\mathcal{N}$ ni grupa za kompozitum. Opazimo, da $\mathcal{N}$ ne vsebuje enote, torej identitete. Identiteta namreč nobene pogojno divergentne vrste ne preslika v pogojno konvergentno. Poleg tega po točki \ref{itm1:1} v trditvi \ref{trd:o in n} množica $\mathcal{N}$ ne vsebuje inverza nobenega svojega elementa, saj za elemente množice $\mathcal{N}$ velja, da njihovi inverzi ne ohranjajo konvergence.
+%dokaz za zadnjo točko
+\end{enumerate}
+\end{proof}
+
+Posledica prejšnje trditve nam pravzaprav podaja alternativno definicijo \\$\lambda$-permutacij.
 
 \begin{posledica}
 Permutacija naravnih števil $\sigma$ je $\lambda$-permutacija natanko tedaj ko ohranja konvergenco, njen inverz pa ne.
 \end{posledica}
+%ali posledica rabi dokaz?
 
 \section{Množica vseh $\lambda$-permutacij}
 
@@ -275,6 +292,23 @@ O njeni moči govori naslednji izrek.
 \begin{izrek}
 $card(\mathcal{N})=card(\mathcal{O})=2^{\aleph_0}$
 \end{izrek}
+
+\begin{proof}
+Naj bo množica $X$ poljubna podmnožica množice naravnih števil $\N$. Naj bo $\tau_X$ permutacija, ki transponira števili $2m+1$ in $2m$, če je $m\in X$, ostala števila pa preslika sama vase. Vidimo lahko, da je zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ omejeno. Še več, število blokov $b_n$ je za vsak $n$ enako ali $1$ ali $2$. Oglejmo si, zakaj. 
+
+Oglejmo si dve različni permutaciji $\tau_X$ in $\tau_Y$. Prva naj bo videti tako:
+$$\tau_X =
+\left(
+\begin{array}{cccccccc}
+1 & 2 & \cdots & 2m-2 & 2m-1 & 2m & 2m+1 & \cdots \\  
+1 & 2 & \cdots & 2m-2 & 2m & 2m-1 & 2m+1 & \cdots
+  \end{array}
+\right)$$
+Število $m$ je najmanjše naravno število v množici $\tau_X$, število $m+1$ pa ni element te množice. Potem velja naslednje:
+$$\{ \sigma (1), \sigma (2), \ldots \sigma (k) \} = [1, k]_{\Z}$$
+za vsak $k\in \N$, ki ni oblike $k=2m-1$ za $m\in X$. Za $k$ oblike $k=2m-1$ pa velja:
+$$\{ \sigma (1), \sigma (2), \ldots \sigma (k) \} =\{ \sigma (1), \sigma (2), \ldots \sigma (2m-1) \}= [1, 2m-2]_{\Z} \cup [2m, 2m-2]_{\Z}$$
+\end{proof}
 
 \subsection{Omejenost množice $\lambda$ permutacij}
 
