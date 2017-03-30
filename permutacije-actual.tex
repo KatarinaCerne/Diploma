@@ -75,14 +75,14 @@ Ljubljana, \letnica}
 
 \section{Uvod}
 
-Številska vrsta $\sum^{\infty}_{n=1}a_n$ je neskončna vsota členov zaporedja realnih števil \\$\{a_{n}\}_{n\in \N}$. Zaporedje delnih vsot številske vrste je definirano kot zaporedje $\{S_{n}\}_{n\in \N}$ s členi $S_i = a_1 + a_2 + \ldots + a_i$. Pravimo, da številska vrsta $\sum^{\infty}_{n=1}a_n$ \emph{konvergira}, če konvergira zaporedje njenih delnih vsot $\{S_n\}^{\infty}_{n=1}$. Vsota te vrste je enaka limiti zaporedja delnih vsot. Konvergentne vrste ločimo na \emph{absolutno konvergentne} in \emph{pogojno konvergentne}. Vrsta $\sum^{\infty}_{n=1}a_n$ konvergira absolutno, če konvergira vrsta $\sum^{\infty}_{n=1}|a_n|$, pogojno pa konvergira, če vrsta $\sum^{\infty}_{n=1}a_n$ konvergira, vrsta $\sum^{\infty}_{n=1}|a_n|$ pa divergira. V zvezi s konvergenco vrst je potrebno omeniti tudi dva pomembna izreka.
+\emph{Številska vrsta} $\sum^{\infty}_{n=1}a_n$ je neskončna vsota členov zaporedja realnih števil\\ $\{a_{n}\}_{n\in \N}$. \emph{Zaporedje delnih vsot} številske vrste je definirano kot zaporedje $\{S_{n}\}_{n\in \N}$ s členi $S_i = a_1 + a_2 + \ldots + a_i.$ Pravimo, da številska vrsta $\sum^{\infty}_{n=1}a_n$ \emph{konvergira}, če konvergira zaporedje njenih delnih vsot $\{S_n\}^{\infty}_{n=1}$. Vsota te vrste je enaka limiti zaporedja delnih vsot. Konvergentne vrste ločimo na \emph{absolutno konvergentne} in \emph{pogojno konvergentne}. Vrsta $\sum^{\infty}_{n=1}a_n$ \emph{konvergira absolutno}, če konvergira vrsta $\sum^{\infty}_{n=1}|a_n|$, pogojno pa konvergira, če vrsta $\sum^{\infty}_{n=1}a_n$ konvergira, vrsta $\sum^{\infty}_{n=1}|a_n|$ pa divergira, pa rečemo, da je vrsta $\sum^{\infty}_{n=1}a_n$ \emph{pogojno konvergentna}. V zvezi s konvergenco vrst je potrebno omeniti tudi dva pomembna izreka.
 
 \begin{izrek}\label{izr:absolutno}
-Naj bo $\sum^{\infty}_{n=1}a_n$ absolutno konvergenta. Potem za vsako permutacijo $\pi$ konvergira tudi $\sum^{\infty}_{n=1}a_{\pi (n)}$ in velja $\sum^{\infty}_{n=1}a_n = \sum^{\infty}_{n=1}a_{\pi (n)}$
+Naj bo $\sum^{\infty}_{n=1}a_n$ absolutno konvergenta. Potem za vsako permutacijo $\pi$ konvergira tudi $\sum^{\infty}_{n=1}a_{\pi (n)}$ in velja $$\sum^{\infty}_{n=1}a_n = \sum^{\infty}_{n=1}a_{\pi (n)}.$$
 \end{izrek}
 
 \begin{izrek}\label{izr:riemann}
-Naj bo $\sum^{\infty}_{n=1}a_n$ pogojno konvergentna vrsta. Potem za vsako število $A\in \R \cup \{ \pm \infty \}$ obstaja taka permutacija $\pi$, da je $\sum^{\infty}_{n=1}a_{\pi (n)} = A$.
+Naj bo $\sum^{\infty}_{n=1}a_n$ pogojno konvergentna vrsta. Potem za vsako število $A\in \R \cup \{ \pm \infty \}$ obstaja taka permutacija $\pi$, da je $$\sum^{\infty}_{n=1}a_{\pi (n)} = A.$$
 \end{izrek}
 
 Vidimo torej, da lahko v absolutno konvergentnih vrstah poljubno premešamo člene, ne da bi kakorkoli vplivali na vsoto ali konvergenco vrste, medtem ko za pogojno konvergentne vrste obstajajo permutacije, ki spremenijo vrstni red členov tako, da lahko dobljena vrsta konvergira h kateremukoli realnemu številu, ali pa celo divergira. Pri tem se pojavi vprašanje, kakšne so te permutacije. Se jih da kako klasificirati? Imajo kakšne skupne lastnosti? V nadaljevanju se bomo ukvarjali predvsem s permutacijami na členih pogojno konvergentnih vrst, ki ohranjajo konvergenco. Primer takih permutacij so t.~i.\ $\lambda$-permutacije.
@@ -126,9 +126,10 @@ Permutacijo $\sigma$ uporabimo na členih številske vrste $\sum^{\infty}_{n=1}a
 \begin{equation}
 \tilde{S_N}=S_{q^2}+(S_B-S_A).\label{eq:3} 
 \end{equation}
-Tu je $q^2$ največji popolni kvadrat, manjši od $N$, in $A \geq q^2$, $B \geq q^2$ ter $A \leq B$. Vsak blok v zaporedju (\ref{eq:1}) se namreč konča s popolnim kvadratom, tako da so indeksi členov v delni vsoti $S_{q^2}=a_1+a_2+\ldots+a_{q^2}$ vsa števila iz blokov od prvega do vključno tistega, ki se konča s $q^2$. Ker se permutiranje členov izvaja samo znotraj blokov, bo imela delna vsota $\tilde{S_{q^2}}$ enake člene kot $S_{q^2}$, le v drugačnem vrstnem redu. Delna vsota $S_4$ na primer izgleda tako: $S_4 = a_1+a_2+a_3+a_4$, medtem ko je $\tilde{S}_4$ taka: $\tilde{S}_4=a_{\sigma(1)}+a_{\sigma(2)}+a_{\sigma(3)}+a_{\sigma(4)}=a_1+a_3+a_4+a_2$. Vidimo, da sta obe delni vsoti enaki, saj vsebujeta vse člene z indeksi iz prvih dveh blokov. Za delne vsote  permutirane vrste torej velja: $\tilde{S_n}=\tilde{S_{q^2}}+Q=S_{q^2}+Q$, kjer je $q^2$ največji popolni kvadrat, manjši od $n$, $Q$ pa vsebuje člene z indeksi, večjimi od $q^2$. Po kontrukciji permutacije $\sigma$ velja, da če $Q$ vsebuje člena $a_C$ in $a_B$, kjer je $C < B$, potem bo vseboval tudi vse člene $a_i$, kjer je $C<i<B$. Torej lahko zapišemo $Q=S_B-S_{C-1}$, od koder sledi enačba (\ref{eq:3}).
+Tu je $q^2$ največji popolni kvadrat, manjši od $N$, in $A \geq q^2$, $B \geq q^2$ ter $A \leq B$. Vsak blok v zaporedju (\ref{eq:1}) se namreč konča s popolnim kvadratom, tako da so indeksi členov v delni vsoti $S_{q^2}=a_1+a_2+\ldots+a_{q^2}$ vsa števila iz blokov od prvega do vključno tistega, ki se konča s $q^2$. Ker se permutiranje členov izvaja samo znotraj blokov, bo imela delna vsota $\tilde{S_{q^2}}$ enake člene kot $S_{q^2}$, le v drugačnem vrstnem redu. 
+Delna vsota $S_4$ na primer izgleda tako: $$S_4 = a_1+a_2+a_3+a_4,$$ medtem ko je $\tilde{S}_4$ taka: $$\tilde{S}_4=a_{\sigma(1)}+a_{\sigma(2)}+a_{\sigma(3)}+a_{\sigma(4)}=a_1+a_3+a_4+a_2.$$ Vidimo, da sta obe delni vsoti enaki, saj vsebujeta vse člene z indeksi iz prvih dveh blokov. Za delne vsote  permutirane vrste torej velja: $$\tilde{S_n}=\tilde{S_{q^2}}+Q=S_{q^2}+Q,$$ kjer je $q^2$ največji popolni kvadrat, manjši od $n$, $Q$ pa vsebuje člene z indeksi, večjimi od $q^2$. Po kontrukciji permutacije $\sigma$ velja, da če $Q$ vsebuje člena $a_C$ in $a_B$, kjer je $C < B$, potem bo vseboval tudi vse člene $a_i$, kjer je $C<i<B$. Torej lahko zapišemo $Q=S_B-S_{C-1}$, od koder sledi enačba (\ref{eq:3}).
 
-Po Cauchyjevem kriteriju za konvergenco zaporedij vrsta $\sum^{\infty}_{n=1}a_n$ konvergira natanko tedaj, ko za vsak $\epsilon >0$ obstaja $n_0 \in \N$, da za vsak par indeksov $m,n\in \N \textrm{, }m>n\geq n_0$ velja $|S_m-S_n|<\epsilon$. Ker je vsaka delna vsota vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ končna linearna kombinacija delnih vsot vrste $\sum^{\infty}_{n=1}a_{n}$, bo Cauchyjev kriterij, če bo veljal za vrsto $\sum^{\infty}_{n=1}a_{n}$, veljal tudi za $\sum^{\infty}_{n=1}a_{\sigma(n)}$. S tem je zadoščeno prvi točki iz definicije $\lambda$-permutacije. %natančnejša razlaga?
+Po Cauchyjevem kriteriju za konvergenco zaporedij vrsta $\sum^{\infty}_{n=1}a_n$ konvergira natanko tedaj, ko za vsak $\epsilon >0$ obstaja $n_0 \in \N$, da za vsak par indeksov $m,n\in \N \textrm{, }m>n\geq n_0$ velja $$|S_m-S_n|<\epsilon$$. Ker je vsaka delna vsota vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ končna linearna kombinacija delnih vsot vrste $\sum^{\infty}_{n=1}a_{n}$, bo Cauchyjev kriterij, če bo veljal za vrsto $\sum^{\infty}_{n=1}a_{n}$, veljal tudi za $\sum^{\infty}_{n=1}a_{\sigma(n)}$. S tem je zadoščeno prvi točki iz definicije $\lambda$-permutacije. %natančnejša razlaga?
 
 Da pokažemo, da je $\sigma$ res $\lambda$-permutacija, moramo poiskati še pogojno divergentno vrsto, iz katere bo permutacija $\sigma$ ustvarila pogojno konvergentno vrsto. Primer take divergente vrste je:
 $$1+\left (-\frac{1}{2}-\frac{1}{2}+\frac{1}{2}\right )+\left (\frac{1}{3}+\frac{1}{3}+\frac{1}{3}-\frac{1}{3}-\frac{1}{3} \right )+\left (-\frac{1}{4}-\frac{1}{4}-\frac{1}{4}-\frac{1}{4}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4}\right )+$$ $$+\left (\frac{1}{5}+\frac{1}{5}+\frac{1}{5}+\frac{1}{5}+\frac{1}{5}-\frac{1}{5}-\frac{1}{5}-\frac{1}{5}-\frac{1}{5} \right )+\dots $$
@@ -152,7 +153,9 @@ Za lažje obravnavanje lastnosti $\lambda$-permutacij vpeljimo notacijo %ali mor
 
 $$[c,d]_{\Z}=\{x \in \Z^+ ; c \leq x \leq d \},$$
 
-kjer sta $c$ in $d$ naravni števili, za kateri velja $c\leq d$. Z notacijo $[2,5]$ na primer označimo množico $\{2,3,4,5\}$.
+kjer sta $c$ in $d$ naravni števili, za kateri velja $c\leq d$. 
+
+Z notacijo $[2,5]$ na primer označimo množico $\{2,3,4,5\}$.
 
 Naj bo sedaj $\sigma$ neka permutacija naravnih števil in $n$ naravno število. Zapišemo lahko:
 
@@ -161,18 +164,20 @@ Naj bo sedaj $\sigma$ neka permutacija naravnih števil in $n$ naravno število.
 \end{equation} 
 
 pri čemer je $c^n_i \leq d^n_i$ in $c^n_{i+1} \geq d^n_i +2$. Z $b_n$ smo označili število blokov oblike $[c^n_i, d^n_i]_{\Z}$, ki sestavljajo zgornjo unijo. Za permutacijo $\sigma$ lahko definiramo zaporedje $\{b_n\}^{\infty}_{n=1}$, ki ga imenujemo \emph{zaporedje števil blokov}. %posebej definicija zaporedja števil blokov?
-V nadaljevanju bomo rabili še notacijo $M_n=d^n_{b_n}+1=max(\{ \sigma (1), \sigma (2), \ldots \sigma (n) \})+1$, kjer je $d^n_{b_n}$ število, s katerim se konča zadnji blok v notaciji \ref{eq:4}.
+V nadaljevanju bomo rabili še notacijo $$M_n=d^n_{b_n}+1=max(\{ \sigma (1), \sigma (2), \ldots \sigma (n) \})+1,$$ kjer je $d^n_{b_n}$ število, s katerim se konča zadnji blok v notaciji \ref{eq:4}.
 
 \begin{primer}
-Vzemimo permutacijo $\sigma$, ki smo jo skonstruirali v poglavju \ref{sec:konstrukcija}, torej $$\sigma = \bigg(\begin{matrix}
+Vzemimo permutacijo $\sigma$, ki smo jo skonstruirali v poglavju \ref{sec:konstrukcija}, torej 
+$$\sigma = \bigg(\begin{matrix}
     1 & 2 & 3 & 4 & 5 & 6 & \cdots   \\   1 & 3 & 4 & 2 & 7 & 8 & \cdots
-  \end{matrix}\bigg).$$ Potem lahko zapišemo $\{\sigma(1), \sigma(2), \ldots, \sigma(8) \} = \{ 1,3,4,2,7,8\} = [1,4]_{\Z} \cup [7,8]_{\Z}$. V tem primeru je število blokov $b_8=2$, saj lahko $\{\sigma(1), \sigma(2), \ldots, \sigma(8) \}$ zapišemo kot unijo najmanj dveh blokov oblike  $[c^n_i, d^n_i]_{\Z}$.
-Oglejmo si še zaporedje števil blokov za permutacijo $\sigma$. Očitno je $b_1=1$. Ker je $\{\sigma(1), \sigma(2) \} = \{ 1,3\} = [1,1]_{\Z} \cup [3,3]_{\Z}$, je $b_2=2$. Za $n=3$ velja $\{\sigma(1), \sigma(2), \sigma(3) \} = \{ 1,3,4\} = [1,1]_{\Z} \cup [3,4]_{\Z}$, torej je $b_3$=2, in tako dalje. Zaporedje števil blokov za permutacijo $\sigma$ je torej videti tako: $1\:2\:2\:1\:2\:2\:\ldots$.
+  \end{matrix}\bigg).$$
+Potem lahko zapišemo $$\{\sigma(1), \sigma(2), \ldots, \sigma(8) \} = \{ 1,3,4,2,7,8\} = [1,4]_{\Z} \cup [7,8]_{\Z}.$$ V tem primeru je število blokov $b_8=2$, saj lahko $\{\sigma(1), \sigma(2), \ldots, \sigma(8) \}$ zapišemo kot unijo najmanj dveh blokov oblike  $[c^n_i, d^n_i]_{\Z}$.
+Oglejmo si še zaporedje števil blokov za permutacijo $\sigma$. Očitno je $b_1=1$. Ker je $$\{\sigma(1), \sigma(2) \} = \{ 1,3\} = [1,1]_{\Z} \cup [3,3]_{\Z},$$ je $b_2=2$. Za $n=3$ velja $$\{\sigma(1), \sigma(2), \sigma(3) \} = \{ 1,3,4\} = [1,1]_{\Z} \cup [3,4]_{\Z},$$ torej je $b_3$=2, in tako dalje. Zaporedje števil blokov za permutacijo $\sigma$ je torej videti tako: $$1\:2\:2\:1\:2\:2\:\ldots.$$
 \end{primer}
 
 Zgoraj vpeljane notacije bodo zelo uporabne pri dokazu sledeče trditve, ki govori o povezavi med ohranjanjem konvergence in vsote.
 
-\begin{trditev}
+\begin{trditev} \label{trd:ohranjanje}
 Naj bo $\sigma$ permutacija naravnih števil. Naslednje trditve so ekvivalentne:
 \begin{enumerate}
 \item permutacija $\sigma$ ohranja konvergenco \label{itm:1}
@@ -188,6 +193,7 @@ Dokažimo sedaj, da iz (\ref{itm:1}) sledi (\ref{itm:2}).
 Naj bo $\sigma$ neka permutacija naravnih števil, ki ohranja konvergenco. Dokaza se lotimo s protislovjem. Predpostavimo, da je zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ permutacije $\sigma$ neomejeno. Poiskali bomo tako konvergentno vrsto $\sum^{\infty}_{n=1}a_n$, da bo $\sum^{\infty}_{n=1}a_{\sigma (n)}$ divergentna, kar je v protislovju s predpostavko, da $\sigma$ ohranja konvergenco. 
 
 Izberimo tak $n_1\in \N$, da je $c_1^{n_1}=1$, kjer je  $c_1^{n_1}$ število,s katerim se začne prvi blok v izrazu $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \} = [c^{n_1}_1, d^{n_1}_1]_{\Z} \cup [c^{n_1}_2, d^{n_1}_2]_{\Z} \cup \cdots \cup [c^{n_1}_{b_n}, d^{n_1}_{b_n}]_{\Z}$. Drugače rečeno, naj bo $1\in \{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$. Za tak $n_1$ za vsak $k\in \N$, za katerega velja $1 \leq k \leq M_{n_1}$ definiramo člen $a_k$ zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$ na naslednji način:
+
 $$a_k = 
 \left\{ 
 \begin{array}{ccc}
@@ -197,15 +203,17 @@ $$a_k =
 \end{array}
 \right. 
 $$
-Če imamo na primer permutacijo $\sigma$ kot v poglavju \ref{sec:konstrukcija} in $n_1=6$, potem je $\{ \sigma (1), \sigma (2), \ldots \sigma (6) \} = \{1, 3, 4, 2, 7, 8 \}= [1,4]_{\Z} \cup [7,8]_{\Z}$, za zaporedje $\{a_n\}^{9}_{n=1}$ pa velja, da je $a_4=1,\ a_5=-1,\ a_8 =1$ in $a_9=-1$, vsi ostali členi pa so enaki nič.
 
-Oglejmo si nekaj značilnosti tega zaporedja. Najprej opazimo, da velja enakost $\sum_{k=1}^{n_1}a_{\sigma(k)}=b_{n_1}\geq 1$. Členi zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$, ki so enaki $-1$ namreč zagotovo niso vključeni v to vsoto. Členi, enaki $a_k=-1$, so namreč tisti, za katere je $k=d_i^{n_1}+1$, $d_i^{n_1}+1$ pa za noben $i$ ni element množice $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$, saj mora biti med $d_i^{n_1}$ in $c_{i+1}^{n_1}$ vsaj eno število, ki ni v množici $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$. V nasprotnem primeru bi namesto $[c_i^{n_1},d_i^{n_1}] \cup [c_{i+1}^{n_1},d_{i+1}^{n_1}]$ v izrazu \ref{eq:4} pisali kar $[c_i^{n_1},d_{i+1}^{n_1}]$. 
+Če imamo na primer permutacijo $\sigma$ kot v poglavju \ref{sec:konstrukcija} in $n_1=6$, potem je $$\{ \sigma (1), \sigma (2), \ldots \sigma (6) \} = \{1, 3, 4, 2, 7, 8 \}= [1,4]_{\Z} \cup [7,8]_{\Z},$$ za zaporedje $\{a_n\}^{9}_{n=1}$ pa velja, da je $$a_4=1,\ a_5=-1,\ a_8 =1\textrm{ in }a_9=-1,$$ vsi ostali členi pa so enaki nič.
+
+Oglejmo si nekaj značilnosti tega zaporedja.%katerega 
+Najprej opazimo, da velja enakost $$\sum_{k=1}^{n_1}a_{\sigma(k)}=b_{n_1}\geq 1$$. Členi zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$, ki so enaki $-1$ namreč zagotovo niso vključeni v to vsoto. Členi, enaki $a_k=-1$, so namreč tisti, za katere je $k=d_i^{n_1}+1$, $d_i^{n_1}+1$ pa za noben $i$ ni element množice $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$, saj mora biti med $d_i^{n_1}$ in $c_{i+1}^{n_1}$ vsaj eno število, ki ni v množici $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$. V nasprotnem primeru bi namesto $[c_i^{n_1},d_i^{n_1}] \cup [c_{i+1}^{n_1},d_{i+1}^{n_1}]$ v izrazu \ref{eq:4} pisali kar $[c_i^{n_1},d_{i+1}^{n_1}]$. 
 
 Členi zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$, ki so enaki $a_k=1$, so zagotovo vsi vključeni v zgornjo vsoto, saj zanje velja, da je $k=d_i^{n_1}$ za $1\leq i\leq b_{n_1}, d_i^{n_1}$ pa je za vsak tak $i$ element množice $\{ \sigma (1), \sigma (2), \ldots \sigma (n_1) \}$. Ta množica torej vsebuje ravno $b_{n_1}$ elementov oblike $d_i^{n_1}$, torej bo v vsoti $\sum_{k=1}^{n_1}a_{\sigma(k)}$ ravno $b_{n_1}$ členov, ki bodo enaki $1$, vsi ostali pa bodo ničelni. Od tod torej sledi $\sum_{k=1}^{n_1}a_{\sigma(k)}=b_{n_1}$, da je $b_{n_1}\geq 1$, pa je očitno.
 
-Poleg tega vidimo še, da je $\sum_{k=1}^{M_{n_1}}a_k=0$. Členi zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$, ki so enaki $1$ in $-1$ namreč vselej nastopajo v parih. Če je $a_i=1$, potem je $a_{i+1}=-1$. Zadnji člen vsote je $a_{M_{n_1}}=-1$, saj je $M_{n_1}=d_{b_{n_1}}^{n_1}+1$. V vsoti $\sum_{k=1}^{M_{n_1}}a_k=0$ je tako enako število členov, enakih $1$ in členov, enakih $-1$, ki se med sabo odštejejo, vsi ostali členi v vsoti pa so ničelni.
+Poleg tega vidimo še, da je $$\sum_{k=1}^{M_{n_1}}a_k=0.$$ Členi zaporedja $\{a_n\}^{M_{n_1}}_{n=1}$, ki so enaki $1$ in $-1$ namreč vselej nastopajo v parih. Če je $a_i=1$, potem je $a_{i+1}=-1$. Zadnji člen vsote je $a_{M_{n_1}}=-1$, saj je $M_{n_1}=d_{b_{n_1}}^{n_1}+1$. V vsoti $\sum_{k=1}^{M_{n_1}}a_k=0$ je tako enako število členov, enakih $1$ in členov, enakih $-1$, ki se med sabo odštejejo, vsi ostali členi v vsoti pa so ničelni.
 
-Na podoben način pokažemo tudi, da je $\sum_{k=1}^{n}a_k=0$ ali $1$, kjer za $n$ velja $1\geq n\geq M_{n_1}$. Za tako vsoto namreč obstajajo tri možnosti: ali je zadnji člen enak $0$ ali $1$ ali pa $-1$. Če je enak $0$ ali $-1$, bo število členov, enakih $1$, enako številu členov, enakih $-1$ in bo vsota enaka nič. Če pa je zadnji člen enak $1$, bo število členov, enakih $1$, za eno večje od števila členov, enakih $-1$, ($-1$ namreč vedno sledi takoj za $1$), torej bo vsota enaka $1$.
+Na podoben način pokažemo tudi, da je $$\sum_{k=1}^{n}a_k=0\textrm{ ali }1,$$ kjer za $n$ velja $1\geq n\geq M_{n_1}$. Za tako vsoto namreč obstajajo tri možnosti: ali je zadnji člen enak $0$ ali $1$ ali pa $-1$. Če je enak $0$ ali $-1$, bo število členov, enakih $1$, enako številu členov, enakih $-1$ in bo vsota enaka nič. Če pa je zadnji člen enak $1$, bo število členov, enakih $1$, za eno večje od števila členov, enakih $-1$, ($-1$ namreč vedno sledi takoj za $1$), torej bo vsota enaka $1$.
 
 Do sedaj smo skonstruirali zaporedje $\{a_n\}^{M_{n_1}}_{n=1}$, radi pa bi imeli zaporedje $\{a_n\}^{\infty}_{n=1}$. Preostanek zaporedja konstruiramo rekurzivno: za vsak $j\in \N,\ j>1$ moramo izbrati $n_j$, da je $M_{n_j}>M_{n_{j-1}}$ in za vsak $k$, ki ustreza $M_{n_{j-1}}<k\leq M_{n_j}$ moramo definirati $a_k$ tako, da bo veljalo $\sum_{k=1}^{M_{n_j}}a_k=0$.
 
@@ -224,13 +232,13 @@ $$
 
 %Ker smo izbrali $n_j$ tako, da je $d_1^{n_j}>M_{n_{j-1}}$, velja $\{ \sigma (1), \sigma (2), \ldots \sigma (n_j) \} = [1, d_1^{n_j}]_{\Z} \cup [c_2^{n_j}, d_2^{n_j}]_{\Z} \cup \cdots \cup [c^{n_j}_{b_n}, d^{n_j}_{b_n}]_{\Z}$, kjer $ [1, d_1^{n_j}]_{\Z}$ vsebuje vsa števila med $1$ in $M_{n_j}$.
 %ta del dokaza mi ni čisto jasen
-Podobno kot pri $j=1$ tudi tu vidimo, da je $\sum_{k=1}^{n_j}a_{\sigma(k)}=\frac{b_{n_j}}{j}\geq j$, $\sum_{k=1}^{M_{n_1}}a_k=0$ in $\sum_{k=1}^{n}a_k=0$ ali $\frac{1}{j}$ za $M_{n_{j-1}}<n<M_{n_j}$.%zakaj rabim ta zadnji del
+Podobno kot pri $j=1$ tudi tu vidimo, da je $$\sum_{k=1}^{n_j}a_{\sigma(k)}=\frac{b_{n_j}}{j}\geq j\textrm{, }\sum_{k=1}^{M_{n_1}}a_k=0$$ in $$\sum_{k=1}^{n}a_k=0\textrm{ ali }\frac{1}{j}\textrm{ za }M_{n_{j-1}}<n<M_{n_j}.$$%zakaj rabim ta zadnji del
 
 Če sedaj pošljemo $j$ proti neskončno, dobimo, $\sum_{k=1}^{\infty}a_k=0$. Ta vrsta torej konvergira. Po drugi strani pa $\sum_{k=1}^{M_{n_1}}a_{\sigma(k)}$ divergira, saj je $\sum_{k=1}^{n_j}a_{\sigma(k)}\geq j$ za vsak $j$. Torej $\sigma$ ne ohranja konvergence, kar je v nasprotju z začetno predpostavko. Sledi, da je zaporedje števil blokov $\{b_n\}^{\infty}_{n=1}$ omejeno.
 
 Zadnja implikacija, ki jo moramo dokazati, je, da iz (\ref{itm:2}) sledi (\ref{itm:3}).
-Imejmo permutacijo naravnih števil $\sigma$ in naj bo $\{b_n\}_{n=1}^{\infty}$ njeno zaporedje števil blokov, ki je omejeno. Naj bo $\{a_k\}_{k=1}^{\infty}$ tako zaporedje, da velja $\sum_{k=1}^{\infty}a_k=L\in \R$.Pokazati hočemo, da pri takih pogojih $\sigma$ ohranja vsoto, torej, da je $\sum_{k=1}^{\infty}a_k=\sum_{k=1}^{\infty}a_{\sigma(k)}=L$. 
-Označimo s $S(n)=\sum_{k=1}^{n}a_k$ delne vsote vrste $\sum_{k=1}^{\infty}a_k$. Iz definicije vsote vrste sledi, da je $\lim_{n\to \infty}S(n)=L$. Oglejmo si sedaj delovanje permutacije $\sigma$. Naj bo $n$ tako velik, da bo v zapisu $\{ \sigma (1), \sigma (2), \ldots \sigma (n) \} = [c^n_1, d^n_1]_{\Z} \cup [c^n_2, d^n_2]_{\Z} \cup \cdots \cup [c^n_{b_n}, d^n_{b_n}]_{\Z}$ veljalo, da je $c^n_1$ enak $1$. Potem je 
+Imejmo permutacijo naravnih števil $\sigma$ in naj bo $\{b_n\}_{n=1}^{\infty}$ njeno zaporedje števil blokov, ki je omejeno. Naj bo $\{a_k\}_{k=1}^{\infty}$ tako zaporedje, da velja $$\sum_{k=1}^{\infty}a_k=L\in \R.$$ Pokazati hočemo, da pri takih pogojih $\sigma$ ohranja vsoto, torej, da je $$\sum_{k=1}^{\infty}a_k=\sum_{k=1}^{\infty}a_{\sigma(k)}=L.$$ 
+Označimo s $$S(n)=\sum_{k=1}^{n}a_k$$ delne vsote vrste $\sum_{k=1}^{\infty}a_k$. Iz definicije vsote vrste sledi, da je $$\lim_{n\to \infty}S(n)=L.$$ Oglejmo si sedaj delovanje permutacije $\sigma$. Naj bo $n$ tako velik, da bo v zapisu $\{ \sigma (1), \sigma (2), \ldots \sigma (n) \} = [c^n_1, d^n_1]_{\Z} \cup [c^n_2, d^n_2]_{\Z} \cup \cdots \cup [c^n_{b_n}, d^n_{b_n}]_{\Z}$ veljalo, da je $c^n_1$ enak $1$. Potem je 
 \begin{equation} \label{eq:5}
 \sum_{k=1}^{n}a_{\sigma(k)}=\sum_{k=1}^{d_1^n}a_k+\sum_{i=2}^{b_n}\sum_{k=c_i^n}^{d_i^n}a_k = S(d_1^n)+\sum_{i=2}^{b_n}(S(d_i^n)-S(c_i^n-1)).
 \end{equation}
@@ -294,9 +302,9 @@ $card(\mathcal{N})=card(\mathcal{O})=2^{\aleph_0}$
 \end{izrek}
 
 \begin{proof}
-Naj bo množica $X$ poljubna podmnožica množice naravnih števil $\N$. Naj bo $\tau_X$ permutacija, ki transponira števili $2m+1$ in $2m$, če je $m\in X$, ostala števila pa preslika sama vase. Vidimo lahko, da je zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ omejeno. Še več, število blokov $b_n$ je za vsak $n$ enako ali $1$ ali $2$. Oglejmo si, zakaj. 
+Naj bo množica $X$ poljubna podmnožica množice naravnih števil $\N$. Naj bo $\tau_X$ permutacija, ki transponira števili $2m-1$ in $2m$, če je $m\in X$, ostala števila pa preslika sama vase. %Vidimo lahko, da je zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ omejeno. Še več, število blokov $b_n$ je za vsak $n$ enako ali $1$ ali $2$. Oglejmo si, zakaj. 
 
-Oglejmo si dve različni permutaciji $\tau_X$ in $\tau_Y$. Prva naj bo videti tako:
+Oglejmo si  primera dveh takih permutaciji $\tau_X$ in $\tau_Y$. Naj bo $X=\{m\}$ in $Y=\{m,m+1\}$. Permutacija $\tau_X$ je videti tako:
 $$\tau_X =
 \left(
 \begin{array}{cccccccc}
@@ -304,17 +312,50 @@ $$\tau_X =
 1 & 2 & \cdots & 2m-2 & 2m & 2m-1 & 2m+1 & \cdots
   \end{array}
 \right)$$
-Število $m$ je najmanjše naravno število v množici $\tau_X$, število $m+1$ pa ni element te množice. Potem velja naslednje:
+Permutacija $\tau_X$ je torej transpozicija $\tau_X = (2m-1 \: 2m)$.
+Potem velja naslednje:
 $$\{ \sigma (1), \sigma (2), \ldots \sigma (k) \} = [1, k]_{\Z}$$
-za vsak $k\in \N$, ki ni oblike $k=2m-1$ za $m\in X$. Za $k$ oblike $k=2m-1$ pa velja:
+za vsak $k\in \N$, različen od $2m-1$ za $m\in X$. Za $k=2m-1$ pa velja:
 $$\{ \sigma (1), \sigma (2), \ldots \sigma (k) \} =\{ \sigma (1), \sigma (2), \ldots \sigma (2m-1) \}= [1, 2m-2]_{\Z} \cup [2m, 2m-2]_{\Z}$$
+Permutacija $\tau_Y$ pa izgleda tako:
+$$\tau_Y =
+\left(
+\begin{array}{cccccccccc}
+1 & 2 & \cdots & 2m-2 & 2m-1 & 2m & 2m+1 & 2m+2 & 2m+3 & \cdots \\  
+1 & 2 & \cdots & 2m-2 & 2m & 2m-1 & 2m+2 & 2m+1 & 2m+3 & \cdots
+  \end{array}
+\right),$$
+torej je $\tau_Y$ produkt transpozicij $\tau_Y=(2m-1 \: 2m)\: (2m+1 \: 2m+2)$.
+V tem primeru pa je 
+$$\{ \sigma (1), \sigma (2), \ldots \sigma (k) \} = [1, k]_{\Z}$$
+za vsak $k\in \N$, različen od $2m+1$ in od $2m-1$ za $m\in Y$. Za $k=2m+1$ oziroma $k=2m-1$ pa velja:
+$$\{ \sigma (1), \sigma (2), \ldots \sigma (2m+1) \}= [1, 2m]_{\Z} \cup [2m+2, 2m+2]_{\Z}$$
+in 
+$$\{ \sigma (1), \sigma (2), \ldots \sigma (2m+1) \}= [1, 2m]_{\Z} \cup [2m+2, 2m+2]_{\Z}$$
+%ali je smiselno, da se tega lotevam tako?
+
+Iz teh dveh primerov je razvidno, da je tako definirana permutacija $\tau_X$ vedno enaka produktu transpozicij oblike $(2m-1 \: 2m)$ za $m \in X$ in da za njeno zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ zato velja:
+$$b_n = 
+\left\{ 
+\begin{array}{ccc}
+2&;&n=2m-1\textrm{ za nek }m \in X\\
+1&;&\textrm{sicer.}\\
+\end{array}
+\right. 
+$$
+
+Njeno zaporedje števil blokov je torej omejeno, od koder po trditvi \ref{trd:ohranjanje} sledi, da permutacija $\tau_X$ na številskih vrstah ohranja konvergenco in vsoto. Torej je $\tau_X \in \mathcal{O}$.
+
+Za različne množice $X \subseteq \N$ dobimo različne permutacije $\tau_X$. Ker je podmnožic množice naravnih števil ravno $2^{\aleph_0}$, imamo tudi $2^{\aleph_0}$ permutacij oblike $\tau_X$. Sledi, da je $card(\mathcal{O})\geq2^{\aleph_0}$. Po drugi strani pa vemo, da ima množica vseh permutacij naravnih števil moč $2^{\aleph_0}$, torej lahko velja le $card(\mathcal{O})\leq2^{\aleph_0}$. Sledi, da je $card(\mathcal{O})=2^{\aleph_0}$.
+
+Oglejmo si še, kako je z močjo množice $\lambda$-permutacij oziroma množice $\mathcal{N}$. Iz trditve \ref{trd:o in n} je razvidno, da je kompozicija permutacije iz množice $\mathcal{O}$ z $\lambda$-permutacijo spet $\lambda$-permutacija. Naj bo $\sigma$ neka $\lambda$-permutacija (v poglavju \ref{sec:konstrukcija} smo pokazali, da obstaja vsaj ena $\lambda$-permutacija) in naj bo $\tau_X$ prej definirana permutacija, ki je, kot smo pokazali, element množice $\mathcal{O}$. Torej je kompozitum obeh permutacij $\tau_X \circ \sigma$ spet $\lambda$-permutacija. Enako kot pri računanju moči množice $\mathcal{O}$, tudi tu opazimo, da mora biti moč množice $\lambda$-permutacij vsaj $2^{\aleph_0}$, saj je toliko vseh množic $X \subseteq \N$, hkrati pa ne more biti večja od moči množice vseh permutacij naravnih števil. Tako da je tudi  $card(\mathcal{N})=2^{\aleph_0}$.
 \end{proof}
 
 \subsection{Omejenost množice $\lambda$ permutacij}
 
 Ali ima množica vseh $\lambda$-permutacij zgornjo mejo, tj.\ ali obstaja permutacija, ki ustvari največ konvergentnih vrst?
 
-Najprej definirajmo relacijo delne urejenosti na množici $ \mathbb{N}$. Naj bosta $\sigma _1$ in $\sigma _2$ $\lambda$-permutaciji. Rečemo, da je $\sigma_1 < \sigma_2$, če za vsako vrsto $\sum^{\infty}_{n=1}a_n$, za katero $\sum^{\infty}_{n=1}a_{\sigma_2(n)}$ konvergira, konvergira tudi $\sum^{\infty}_{n=1}a_{\sigma_1(n)}$. 
+Da bomo lahko odgovorili na to vprašanje, najprej definirajmo relacijo delne urejenosti na množici $ \mathbb{N}$. Naj bosta $\sigma _1$ in $\sigma _2$ $\lambda$-permutaciji. Rečemo, da je $\sigma_1 < \sigma_2$, če za vsako vrsto $\sum^{\infty}_{n=1}a_n$, za katero $\sum^{\infty}_{n=1}a_{\sigma_2(n)}$ konvergira, konvergira tudi $\sum^{\infty}_{n=1}a_{\sigma_1(n)}$. 
 
 Pokazali smo že (trditev \ref{trd:o in n}), da če je $\sigma$ $\lambda$-permutacija, potem je tudi $\sigma \circ \sigma$  $\lambda$-permutacija. Če vrsta $\sum^{\infty}_{n=1}a_{\sigma(n)}$ konvergira, torej konvergira tudi $\sum^{\infty}_{n=1}a_{\sigma \circ \sigma(n)}$. Velja torej $\sigma < \sigma \circ \sigma$, od tod pa induktivno sledi: $\sigma < \sigma \circ \sigma < \sigma \circ \sigma \circ \sigma < \cdots$. Za vsako $\lambda$-permutacijo lahko najdemo novo $\lambda$-permutacijo, ki bo ">večja"< od nje. Torej množica vseh $\lambda$-permutacij nima zgornje meje. 
 
