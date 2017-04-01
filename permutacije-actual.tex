@@ -358,19 +358,41 @@ Ali ima množica vseh $\lambda$-permutacij zgornjo mejo, tj.\ ali obstaja permut
 Da bomo lahko odgovorili na to vprašanje, najprej definirajmo relacijo delne urejenosti na množici $ \mathbb{N}$. Naj bosta $\sigma _1$ in $\sigma _2$ $\lambda$-permutaciji. Rečemo, da je $\sigma_1 < \sigma_2$, če za vsako vrsto $\sum^{\infty}_{n=1}a_n$, za katero $\sum^{\infty}_{n=1}a_{\sigma_2(n)}$ konvergira, konvergira tudi $\sum^{\infty}_{n=1}a_{\sigma_1(n)}$. 
 
 Pokazali smo že (trditev \ref{trd:o in n}), da če je $\sigma$ $\lambda$-permutacija, potem je tudi $\sigma \circ \sigma$  $\lambda$-permutacija. Če vrsta $\sum^{\infty}_{n=1}a_{\sigma(n)}$ konvergira, torej konvergira tudi $\sum^{\infty}_{n=1}a_{\sigma \circ \sigma(n)}$. Velja torej $\sigma < \sigma \circ \sigma$, od tod pa induktivno sledi: $\sigma < \sigma \circ \sigma < \sigma \circ \sigma \circ \sigma < \cdots$. Za vsako $\lambda$-permutacijo lahko najdemo novo $\lambda$-permutacijo, ki bo ">večja"< od nje. Torej množica vseh $\lambda$-permutacij nima zgornje meje. 
+%tukaj nekje pride topologija?
 
 
 \section{Pogojno divergentne vrste in $\lambda$-permutacije}
 
-V tem razdelku bomo poskušali odgovoriti še na vprašanje, ali za vsako pogojno divergentno vrsto obstaja $\lambda$-permutacija, taka, da vrsta s spremenjenim vrstnim redom členov konvergira. V ta namen za vsako pogojno konvergento oziroma pogojno divergentno vrsto definirajmo množico $$S=\left \{L\in \mathbb{R}:\textrm{obstaja }\lambda \textrm{-permutacija } \sigma, \sum^{\infty}_{n=1}a_{\sigma (n)}=L\right \}.$$ Na vprašanje bomo odgovorili s pomočjo protiprimera.
+V tem razdelku bomo poskušali odgovoriti še na vprašanje, ali za vsako pogojno divergentno vrsto obstaja $\lambda$-permutacija, taka, da vrsta s spremenjenim vrstnim redom členov konvergira. V ta namen za vsako pogojno konvergento oziroma pogojno divergentno vrsto definirajmo množico $$S=\left \{L\in \mathbb{R}:\textrm{obstaja }\lambda \textrm{-permutacija } \sigma, \sum^{\infty}_{n=1}a_{\sigma (n)}=L\right \}.$$ Na vprašanje bomo odgovorili s pomočjo protiprimera, torej primera pogojno divergentne številske vrste, za katero je $S=\emptyset$. %v drugem delu tega razdelka si bomo ogledali še blablabla
 
-Oglejmo si vrsto:
-$$\sum^{\infty}_{n=1}a_n = 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}-1+\frac{1}{5}+\frac{1}{6}+ \dots +\frac{1}{33}-\frac{1}{2}+\dots$$
-Vrsta je pogojno divergentna. Pokažemo pa lahko, da je z nobeno $\lambda$-permutacijo ne moremo spremeniti v konvergentno. Za to vrsto je torej $S=\emptyset$. 
+\begin{primer}
+Oglejmo si naslednjo številsko vrsto:
+\begin{equation}\label{eq:6}
+\sum^{\infty}_{n=1}a_n = 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}-1+\frac{1}{5}+\frac{1}{6}+ \dots +\frac{1}{33}-\frac{1}{2}+\dots
+\end{equation}
+Zaporedje $a_n$, ki ga seštevamo, je zgrajeno iz med sabo prepletenih zaporedij $\{\frac{1}{n}\}_{n=1}^{\infty}$ in $\{-\frac{1}{n}\}_{n=1}^{\infty}$. Začne se s prvimi nekaj členi zaporedja $\{\frac{1}{n}\}_{n=1}^{\infty}$. Teh mora biti toliko, da je njihova vsota večja ali enaka $2$. Sledi prvi element zaporedja $\{-\frac{1}{n}\}_{n=1}^{\infty}$, nato pa naslednjih nekaj členov zaporedja $\{\frac{1}{n}\}_{n=1}^{\infty}$, spet toliko, da njihova vsota doseže ali preseže $2$, potem pa drugi elelemnt zaporedja $\{-\frac{1}{n}\}_{n=1}^{\infty}$ in tako dalje. 
+Vrsta je pogojno divergentna. Da je divergentna vidimo, če si ogledamo njeno zaporedje delnih vsot. %ne znam razložiti naprej
+Da je pogojno divergentna, pa sledi iz dejstva, da obstaja pogojno konvergentna vrsta $$\sum_{n=1}^{\infty}(-1)^n\frac{1}{n},$$ sestavljena iz popolnoma enakih členov kot vrsta (\ref{eq:6}). Ta konvergira po testu za alternirajoče vrste. %sklicevanje na ta test?
+Torej mora obstajati nekakšna permutacija, ki preuredi člene vrste (\ref{eq:6}), da dobimo pogojno konvergentno vrsto.
+Trdimo, da tega ni mogoče storiti z nobeno $\lambda$-permutacijo, torej da za je to vrsto $S=\emptyset$. 
+%ali bi morala imeti tu strukturo trditev-dokaz?
+
+Zakaj je temu tako, bomo pokazali s protislovjem. Naj bo $\sigma$ neka poljubna $\lambda$-permutacija, s katero delujemo na vrsto (\ref{eq:6}), in naj bo zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ omejeno z $B$. Če delne vsote vrste $\sum_{n=1}^{\infty}a_{\sigma(n)}$ zapišemo kot v enakosti (\ref{eq:5}), dobimo:
+$$\sum_{k=1}^{n}a_{\sigma(k)}=\sum_{k=1}^{d_1^n}a_{k} + \sum_{i=2}^{b_n}\sum_{k=c_i^n}^{d_i^n}a_{k} \geq \sum_{k=1}^{d_1^n}a_{k} - (b_n -1) \geq \sum_{k=1}^{d_1^n}a_{k} - (B -1).$$
+Očitno je namreč, da vsota katerihkoli zaporednih členov zgoraj definiranega zaporedja $\{a_n\}_{n=1}^{\infty}$ nikoli ni manjša od $-1$. Torej velja, da je $$\sum_{k=c_i^n}^{d_i^n}a_{k} \geq -1.$$ Sledi:
+$$\sum_{i=2}^{b_n}\sum_{k=c_i^n}^{d_i^n}a_{k} \geq \sum_{i=2}^{b_n}(-1) = -(b_n-1).$$
+Ko pošljemo $n$ proti neskončno, gre tudi $d_1^n$ proti neskončno (kar smo videli že v dokazu izreka ??). Vrste oblike $\sum_{k=1}^{d_1^n}a_{k}$ so delne vsote vrste (\ref{eq:6}), katerih zaporedje gre proti neskončno, ko gre $d_1^n$ proti neskončno, saj vrsta (\ref{eq:6}) divergira. Sledi, da tudi zaporedje delnih vsot $\sum_{k=1}^{n}a_{\sigma(k)}$ divergira. Ker je bila izbira permutacije $\sigma$ poljubna, lahko zaključimo, da vrsta $\sum_{n=1}^{\infty}a_{\sigma(n)}$ ne konvergira za nobeno $\lambda$-permutacijo $\sigma$.
+\end{primer}
+
+--------------------------------------------------------------------------------------------------
 
 Izrek \ref{izr:riemann} pravi, da je v vsaki pogojno konvergentni vrsti mogoče spremeniti vrstni red členov tako, da dobljena vrsta divergira ali pa konvergira proti kateremukoli realnemu številu. Zgolj z uporabo $\lambda$-permutacij lahko to dosežemo pri naslednji vrsti:
 $$\sum^{\infty}_{n=1}a_n= 1-1-\frac{1}{2}-\frac{1}{3}-\frac{1}{4}+\frac{1}{2}+\frac{1}{3}+\dots +\frac{1}{33}-\frac{1}{5}-\dots $$
-Za vsako število $L\in \mathbb{R}$ obstaja $\lambda$-permutacija, ki iz zgornje (divergentne) vrste ustvari konvergentno vrsto z vsoto $L$. Torej je $S=\mathbb{R}$.
+%razloži vzorec te vrste
+Trdimo, da za vsako število $L\in \mathbb{R}$ obstaja $\lambda$-permutacija, ki iz zgornje (divergentne) vrste ustvari konvergentno vrsto z vsoto $L$, torej da je za to vrsto $S=\mathbb{R}$.
+%povej, zakaj je divergentna
+%lambda permutacija, ki jo preoblikuje v konvergentno
+
 
 \section{Še dva primera...}
 
@@ -380,10 +402,12 @@ Za konec si oglejmo še dva primera $\lambda$-permutacij.
 Razdelimo naravna števila v bloke na naslednji način:\\
 
 $1 \quad 2\: 3\: 4\: 5 \quad 6\: 7\: 8\: 9\: 10\: 11 \quad 12\: 13\: 14\: 15\: 16\: 17\: 18\: 19\: \ldots $\\
+%povej, po kakšnem vzorcu to poteka
 
-Sedaj vsak blok razdelimo na dva enako velika boka in ju prepletemo med sabo. Blok $6\: 7\: 8\: 9\: 10\: 11$ na primer razdelimo na bloka $6\: 7\: 8$ in $9\: 10\: 11$ ter ju prepletemo tako, da na prvo mesto postavimo prvo število prvega bloka, na drugo mesto prvo število drugega bloka, na tretje mesto drugo število prvega bloka in tako dalje. Ko opisani postopek izvedemo na vseh blokih v zaporedju, dobimo:\\
+Sedaj vsak blok razdelimo na dva enako velika boka in ju prepletemo med sabo. Blok $6\: 7\: 8\: 9\: 10\: 11$ na primer razdelimo na bloka $6\: 7\: 8$ in $9\: 10\: 11$ ter ju prepletemo tako, da na prvo mesto postavimo prvo število prvega bloka, na drugo mesto prvo število drugega bloka, na tretje mesto drugo število prvega bloka in tako dalje. Ko opisani postopek izvedemo na vseh blokih v zaporedju, dobimo:\\ %bolj natančno
 
 $1 \quad 2\: 4\: 3\: 5 \quad 6\: 9\: 7\: 10\: 8\: 11 \quad 12\: 16\: 13\: 17\: 14\: 18\: 15\: 19\: \ldots $
+%povej, zakaj je to lambda permutacija
 \end{primer}
 
 \begin{primer}
@@ -391,10 +415,10 @@ Zopet začnemo z zaporedjem naravnih števil, razdeljenim v bloke:\\
 
 $1 \quad 2\: 3\: 4\quad 5\: 6\: 7\: 8\: 9\: 10 \quad 11\: 12\: 13\: 14\: 15\: 16\:17\: 18\: 19\: \ldots $\\
 
-Drugi blok preoblikujemo tako, da prepletemo med sabo bloka $2\: 3$ in $4$. V tretjem bloku prepletemo bloka $5\: 6\: 7\: 8$ in $9\: 10$. V četrtem bloku prepletemo $11\: 12\: 13\: 14\: 15\: 16$ in $17\: 18\: 19$. Tako dobimo:\\
+Drugi blok preoblikujemo tako, da prepletemo med sabo bloka $2\: 3$ in $4$. V tretjem bloku prepletemo bloka $5\: 6\: 7\: 8$ in $9\: 10$. V četrtem bloku prepletemo $11\: 12\: 13\: 14\: 15\: 16$ in $17\: 18\: 19$. Tako dobimo:\\%bolj natančno
 
 $1 \quad 2\: 4\: 3\quad 5\: 6\: 9\: 7\: 8\: 10 \quad 11\: 12\: 17\: 13\: 14\: 18\: 15\: 16\: 19\: \ldots $
-
+%povej, zakaj je to lambda
 \end{primer}
 
 \section{Zaključek}
