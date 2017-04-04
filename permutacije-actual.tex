@@ -365,14 +365,14 @@ Pokazali smo že (trditev \ref{trd:o in n}), da če je $\sigma$ $\lambda$-permut
 
 V tem razdelku bomo poskušali odgovoriti še na vprašanje, ali za vsako pogojno divergentno vrsto obstaja $\lambda$-permutacija, taka, da vrsta s spremenjenim vrstnim redom členov konvergira. V ta namen za vsako pogojno konvergento oziroma pogojno divergentno vrsto definirajmo množico $$S=\left \{L\in \mathbb{R}:\textrm{obstaja }\lambda \textrm{-permutacija } \sigma, \sum^{\infty}_{n=1}a_{\sigma (n)}=L\right \}.$$ Na vprašanje bomo odgovorili s pomočjo protiprimera, torej primera pogojno divergentne številske vrste, za katero je $S=\emptyset$. %v drugem delu tega razdelka si bomo ogledali še blablabla
 
-\begin{primer}
 Oglejmo si naslednjo številsko vrsto:
 \begin{equation}\label{eq:6}
 \sum^{\infty}_{n=1}a_n = 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}-1+\frac{1}{5}+\frac{1}{6}+ \dots +\frac{1}{33}-\frac{1}{2}+\dots
 \end{equation}
 Zaporedje $a_n$, ki ga seštevamo, je zgrajeno iz med sabo prepletenih zaporedij $\{\frac{1}{n}\}_{n=1}^{\infty}$ in $\{-\frac{1}{n}\}_{n=1}^{\infty}$. Začne se s prvimi nekaj členi zaporedja $\{\frac{1}{n}\}_{n=1}^{\infty}$. Teh mora biti toliko, da je njihova vsota večja ali enaka $2$. Sledi prvi element zaporedja $\{-\frac{1}{n}\}_{n=1}^{\infty}$, nato pa naslednjih nekaj členov zaporedja $\{\frac{1}{n}\}_{n=1}^{\infty}$, spet toliko, da njihova vsota doseže ali preseže $2$, potem pa drugi elelemnt zaporedja $\{-\frac{1}{n}\}_{n=1}^{\infty}$ in tako dalje. 
 Vrsta je pogojno divergentna. Da je divergentna vidimo, če si ogledamo njeno zaporedje delnih vsot. %ne znam razložiti naprej
-Da je pogojno divergentna, pa sledi iz dejstva, da obstaja pogojno konvergentna vrsta $$\sum_{n=1}^{\infty}(-1)^n\frac{1}{n},$$ sestavljena iz popolnoma enakih členov kot vrsta (\ref{eq:6}). Ta konvergira po testu za alternirajoče vrste. %sklicevanje na ta test?
+Da je pogojno divergentna, pa sledi iz dejstva, da obstaja pogojno konvergentna vrsta $$\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n}\right),$$ %ali je to pravilno
+sestavljena iz popolnoma enakih členov kot vrsta (\ref{eq:6}). Ta konvergira po testu za alternirajoče vrste. %sklicevanje na ta test?
 Torej mora obstajati nekakšna permutacija, ki preuredi člene vrste (\ref{eq:6}), da dobimo pogojno konvergentno vrsto.
 Trdimo, da tega ni mogoče storiti z nobeno $\lambda$-permutacijo, torej da za je to vrsto $S=\emptyset$. 
 %ali bi morala imeti tu strukturo trditev-dokaz?
@@ -382,17 +382,33 @@ $$\sum_{k=1}^{n}a_{\sigma(k)}=\sum_{k=1}^{d_1^n}a_{k} + \sum_{i=2}^{b_n}\sum_{k=
 Očitno je namreč, da vsota katerihkoli zaporednih členov zgoraj definiranega zaporedja $\{a_n\}_{n=1}^{\infty}$ nikoli ni manjša od $-1$. Torej velja, da je $$\sum_{k=c_i^n}^{d_i^n}a_{k} \geq -1.$$ Sledi:
 $$\sum_{i=2}^{b_n}\sum_{k=c_i^n}^{d_i^n}a_{k} \geq \sum_{i=2}^{b_n}(-1) = -(b_n-1).$$
 Ko pošljemo $n$ proti neskončno, gre tudi $d_1^n$ proti neskončno (kar smo videli že v dokazu izreka ??). Vrste oblike $\sum_{k=1}^{d_1^n}a_{k}$ so delne vsote vrste (\ref{eq:6}), katerih zaporedje gre proti neskončno, ko gre $d_1^n$ proti neskončno, saj vrsta (\ref{eq:6}) divergira. Sledi, da tudi zaporedje delnih vsot $\sum_{k=1}^{n}a_{\sigma(k)}$ divergira. Ker je bila izbira permutacije $\sigma$ poljubna, lahko zaključimo, da vrsta $\sum_{n=1}^{\infty}a_{\sigma(n)}$ ne konvergira za nobeno $\lambda$-permutacijo $\sigma$.
-\end{primer}
 
---------------------------------------------------------------------------------------------------
 
 Izrek \ref{izr:riemann} pravi, da je v vsaki pogojno konvergentni vrsti mogoče spremeniti vrstni red členov tako, da dobljena vrsta divergira ali pa konvergira proti kateremukoli realnemu številu. Zgolj z uporabo $\lambda$-permutacij lahko to dosežemo pri naslednji vrsti:
-$$\sum^{\infty}_{n=1}a_n= 1-1-\frac{1}{2}-\frac{1}{3}-\frac{1}{4}+\frac{1}{2}+\frac{1}{3}+\dots +\frac{1}{33}-\frac{1}{5}-\dots $$
-%razloži vzorec te vrste
-Trdimo, da za vsako število $L\in \mathbb{R}$ obstaja $\lambda$-permutacija, ki iz zgornje (divergentne) vrste ustvari konvergentno vrsto z vsoto $L$, torej da je za to vrsto $S=\mathbb{R}$.
-%povej, zakaj je divergentna
-%lambda permutacija, ki jo preoblikuje v konvergentno
+\begin{equation}\label{eq:7}
+\sum^{\infty}_{n=1}a_n= 1-1-\frac{1}{2}-\frac{1}{3}-\frac{1}{4}+\frac{1}{2}+\frac{1}{3}+\dots +\frac{1}{33}-\frac{1}{5}-\dots
+\end{equation}
+Zaporedje $\{a_n\}_{n=1}^{\infty}$ je tudi v tem primeru zgrajeno iz med sabo prepletenih zaporedij $\{\frac{1}{n}\}_{n=1}^{\infty}$ in $\{-\frac{1}{n}\}_{n=1}^{\infty}$. Začne se s prvimi nekaj členi zaporedja $\{\frac{1}{n}\}_{n=1}^{\infty}$, takimi, da je njihova vsota enaka $s_1$. Tu je $s_1$ najmanjše število, da velja $s_1 \geq 1$. Sledi prvih nekaj števil zaporedja $\{-\frac{1}{n}\}_{n=1}^{\infty}$, takih, da je njihova vsota enaka $-t_1$, pri čemer je $t_1$ najmanjše možno število, za katero velja $t_1 \geq s_1+1$. Nadaljujemo z elementi zaporedja $\{\frac{1}{n}\}_{n=1}^{\infty}$, ki jih je toliko, da je njihova vsota enaka $s_2$, pri čemer je $s_2\geq t_1+1$, in tako dalje. %primer?
 
+Za lažjo obravnavo pozitivne člene zaporedja $a_n$, katerih vsota je $s_i$ imenujmo \emph{$i$-ti pozitivni blok}, negativne člene, katerih vsota je $-t_i$ pa \emph{$i$-ti negativni blok},
+
+Da je ta vrsta pogojno konvergentna, vidimo podobno kot pri prejšnjem primeru. %referenca? %razloži  
+
+Trdimo, da za vsako število $L\in \R$ obstaja $\lambda$-permutacija, ki iz zgornje (divergentne) vrste (\ref{eq:7}) ustvari konvergentno vrsto z vsoto $L$, torej da je za to vrsto $S=\R$. %malo več nakladanja %naj bo to samostojna trditev?
+
+Naj bo torej $L$ neko realno število. Poiskali bomo $\lambda$-permutacijo $\sigma$, ki bo ustrezno preoblikovala vrsto (\ref{eq:7}). 
+
+Najprej poiščimo tak indeks $m_1$, da bo za prej definirano zaporedje $\{a_n\}_{n=1}^{\infty}$ veljalo $$a_{m_1}>0\textrm{ in }L>\sum_{k=1}^{m_1}a_k \geq L+1.$$ Tak indeks $m_1$ zagotovo obstaja. Iz konstrukcije zaporedja $\{a_n\}_{n=1}^{\infty}$ namreč sledi, da delne vsote vrste (\ref{eq:7}) stalno nihajo z vedno večjo frekvenco med pozitivnimi in negativnimi celimi števili. Za prvo delno vsoto te vrste na primer velja $S(1)\geq 1$, za drugo velja, da je $S(2)\leq -1$, sledi $S(3) \geq 2$, $S(4) \leq -2$, in tako dalje.
+
+Definirajmo permutacijo $\sigma$ na prvih $m_1$ elementih naravnih števil kot identiteto, torej $$\sigma(k)=k\textrm{ za }k\leq m_1.$$ Predpostavimo sedaj, da je $a_{m_1}$ del $j$-tega pozitivnega bloka, torej eden izmed členov zaporedja $\{a_n\}_{n=1}^{\infty}$, katerih vsota je $s_j$. Člen $a_{m_1}$ je namreč pozitivno število. Nadaljujmo s konstrukcijo permutacije $\sigma$. Vrednost $\sigma(m_1+1)$ naj bo taka, da je člen $a_{\sigma(m_1+1)}$ enak prvemu še ne uporabljenemu (v tem primeru kar prvemu) členu zaporedja $\{a_n\}_{n=1}^{\infty}$, ki pripada $j$-temu negativnemu bloku, torej bloku števil z vsoto $-t_j$. 
+%primer?
+Preostanek permutacije $\sigma$ skonstruiramo po podobnem principu. Recimo, da smo do sedaj določili $m_i$ členov zaporedja $\{a_\sigma(n)\}_{n=1}^{\infty}$. Če za njihovo vsoto velja $$\sum^{m_i}_{n=1}a_\sigma(n) \leq L,$$ bomo vrednost $\sigma(m_i+1)$ določili tako, da bo $a_{\sigma(m_1+1)}$ enak prvemu še neuporabljenemu pozitivnemu členu zaporedja $\{a_n\}_{n=1}^{\infty}$. Če pa je $$\sum^{m_i}_{n=1}a_\sigma(n) > L,$$ bo vrednost $\sigma(m_i+1)$ taka, da bo člen $a_{\sigma(m_1+1)}$ enak prvemu še ne uporabljenemu negativnemu členu zaporedja $\{a_n\}_{n=1}^{\infty}$.%primer?
+
+Vrsta $\sum^{\infty}_{n=1}a_{\sigma(n)}$, ki jo dobimo, ko končamo s konstrukcijo permutacije $\sigma$ ima vsoto $L$. Permutacijo $\sigma$ smo namreč skonstruirali tako, da delne vsote $\tilde{S}(n)$ vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ stalno nihajo okrog $L$. Dve zaporedni delni vsoti $\tilde{S}(k)$ in $\tilde{S}(k)$ se torej nahajata na intervalu $(L-\epsilon, L+\epsilon)$ za nek $\epsilon > 0$. Poleg tega pa se, ko raste $n$, členi $a_{\sigma(n)}$ manjšajo, torej je razlika med dvema zaporednima delnima vsotama vedno manjša. Interval, na katerem se nahajata zaporedni delni vsoti, se torej manjša. Z drugimi besedami: ko gre $n$ proti neskončnosti, gre $\epsilon$ proti $0$ in posledično vsota vrste $\sum^{\infty}_{n=1}a_{\sigma(n)}$ proti $L$.
+
+Opazimo pa, da velja tudi $$L-1<\sum_{k=1}^{n}a_{\sigma(k)} \geq L+1\textrm{ za }n\geq m_1.$$ Členi zaporedja $\{a_n\}_{n=1}^{\infty}$ namreč vsi ležijo na intervalu $[-1,1]$, zato tudi $\epsilon$ v intervalu $(L-\epsilon, L+\epsilon)$, na katerem ležita zaporedni delni vsoti vrste $\sum_{k=1}^{\infty}a_{\sigma(k)}$, nikoli ni večji od $1$. Vsaka delna vsota $\sum_{k=1}^{n}a_{\sigma(k)}$ od $m_1$-te dalje torej leži na nekem podintervalu intervala $[L-1,L+1]$. %kako je z oklepaji (oglati, okrogli?)
+
+Sedaj moramo dokazati še, da je dobljena permutacija $\sigma$ $\lambda$-permutacija. Omenimo najprej nekaj koristnih opažanj. Vidimo lahko, da je $a_{\sigma(m_1+1)}$ enak ravno prvemu členu $(j+1)$-tega negativnega bloka. Ker je za $k \leq m_1$ $\sigma(k)=k$ in ker je $\sigma(m_1)$ element $j$-tega pozitivnega bloka, pred $\sigma(m_1)$ v zaporedju $\{a_{\sigma(n)}\}_{n=1}^{\infty}$ ni nastopilo nobeno število iz $(j+1)$-tega negativnega bloka. Torej je v tem primeru prvi člen $(j+1)$-tega negativnega bloka ravno prvi še neuporabljeni člen tega bloka. 
 
 \section{Še dva primera...}
 
