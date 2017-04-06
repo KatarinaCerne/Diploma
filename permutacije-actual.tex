@@ -371,7 +371,7 @@ Oglejmo si naslednjo številsko vrsto:
 \end{equation}
 Zaporedje $a_n$, ki ga seštevamo, je zgrajeno iz med sabo prepletenih zaporedij $\{\frac{1}{n}\}_{n=1}^{\infty}$ in $\{-\frac{1}{n}\}_{n=1}^{\infty}$. Začne se s prvimi nekaj členi zaporedja $\{\frac{1}{n}\}_{n=1}^{\infty}$. Teh mora biti toliko, da je njihova vsota večja ali enaka $2$. Sledi prvi element zaporedja $\{-\frac{1}{n}\}_{n=1}^{\infty}$, nato pa naslednjih nekaj členov zaporedja $\{\frac{1}{n}\}_{n=1}^{\infty}$, spet toliko, da njihova vsota doseže ali preseže $2$, potem pa drugi elelemnt zaporedja $\{-\frac{1}{n}\}_{n=1}^{\infty}$ in tako dalje. 
 Vrsta je pogojno divergentna. Da je divergentna vidimo, če si ogledamo njeno zaporedje delnih vsot. %ne znam razložiti naprej
-Da je pogojno divergentna, pa sledi iz dejstva, da obstaja pogojno konvergentna vrsta $$\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n}\right),$$ %ali je to pravilno
+Da je pogojno divergentna, pa sledi iz dejstva, da obstaja pogojno konvergentna vrsta $$\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n}\right),$$ %ali je to pravilno %zapiši raje po členih
 sestavljena iz popolnoma enakih členov kot vrsta (\ref{eq:6}). Ta konvergira po testu za alternirajoče vrste. %sklicevanje na ta test?
 Torej mora obstajati nekakšna permutacija, ki preuredi člene vrste (\ref{eq:6}), da dobimo pogojno konvergentno vrsto.
 Trdimo, da tega ni mogoče storiti z nobeno $\lambda$-permutacijo, torej da za je to vrsto $S=\emptyset$. 
@@ -408,7 +408,22 @@ Vrsta $\sum^{\infty}_{n=1}a_{\sigma(n)}$, ki jo dobimo, ko končamo s konstrukci
 
 Opazimo pa, da velja tudi $$L-1<\sum_{k=1}^{n}a_{\sigma(k)} \geq L+1\textrm{ za }n\geq m_1.$$ Členi zaporedja $\{a_n\}_{n=1}^{\infty}$ namreč vsi ležijo na intervalu $[-1,1]$, zato tudi $\epsilon$ v intervalu $(L-\epsilon, L+\epsilon)$, na katerem ležita zaporedni delni vsoti vrste $\sum_{k=1}^{\infty}a_{\sigma(k)}$, nikoli ni večji od $1$. Vsaka delna vsota $\sum_{k=1}^{n}a_{\sigma(k)}$ od $m_1$-te dalje torej leži na nekem podintervalu intervala $[L-1,L+1]$. %kako je z oklepaji (oglati, okrogli?)
 
-Sedaj moramo dokazati še, da je dobljena permutacija $\sigma$ $\lambda$-permutacija. Omenimo najprej nekaj koristnih opažanj. Vidimo lahko, da je $a_{\sigma(m_1+1)}$ enak ravno prvemu členu $(j+1)$-tega negativnega bloka. Ker je za $k \leq m_1$ $\sigma(k)=k$ in ker je $\sigma(m_1)$ element $j$-tega pozitivnega bloka, pred $\sigma(m_1)$ v zaporedju $\{a_{\sigma(n)}\}_{n=1}^{\infty}$ ni nastopilo nobeno število iz $(j+1)$-tega negativnega bloka. Torej je v tem primeru prvi člen $(j+1)$-tega negativnega bloka ravno prvi še neuporabljeni člen tega bloka. 
+Sedaj moramo dokazati še, da je dobljena permutacija $\sigma$ $\lambda$-permutacija. Omenimo najprej nekaj koristnih opažanj. Vidimo lahko, da je $a_{\sigma(m_1+1)}$ enak ravno prvemu členu $(j+1)$-tega negativnega bloka. Ker je za $k \leq m_1$ $\sigma(k)=k$ in ker je $\sigma(m_1)$ element $j$-tega pozitivnega bloka, pred $\sigma(m_1)$ v zaporedju $\{a_{\sigma(n)}\}_{n=1}^{\infty}$ ni nastopilo nobeno število iz $(j+1)$-tega negativnega bloka. Torej je v tem primeru prvi člen $(j+1)$-tega negativnega bloka ravno prvi še neuporabljeni člen tega bloka. Poleg tega vidimo tudi, da prvih $m_1$ členov vrste $\sum_{k=1}^{\infty}a_{\sigma(k)}$ vsebuje vse člene prvotne vrste do vključno $(j-1)$-tega bloka (in morda še kakšnega iz $j$-tega pozitivnega bloka.
+
+Trdimo sedaj, da se v vrsti  $\sum_{k=1}^{\infty}a_{\sigma(k)}$ prvi člen $(j+1)$-tega pozitivnega bloka pojavi pred prvim členom $(j+1)$-tega negativnega bloka. %povej, zakaj moramo to videti
+Dokaza se lotimo s protislovjem. Recimo, da se prvi člen $(j+1)$-tega negativnega bloka pred prvim členom $(j+1)$-tega pozitivnega bloka in naj se pojavi na $m'+1$-tem mestu permutirane vrste $\sum_{k=1}^{\infty}a_{\sigma(k)}$. Potem mora biti za vsako vrednost $k$, ki zadošča pogoju $m_1<k\leq m'$, $k$-ti člen permutirane vrste ali iz $j$-tega pozitivnega bloka ali iz $j$-tega negativnega bloka. Poleg tega morajo za tak $k$ med člene oblike $a_\sigma(k)$ spadati ravno vsi elementi $j$-tega negativnega bloka, saj lahko pri konstrukciji permutacije $\sigma$ oziroma zaporedja $\{a_{\sigma(n)}\}_{n=1}^{\infty}$ začnemo uporabljati elemente $(j+1)$-tega negativnega bloka šele po tem, ko uporabimo vse elemente $j$-tega negativnega bloka. Vidimo tudi, da mora biti $$\sum_{k=1}^{m'}a_{\sigma(k)}>L,$$saj je šele takrat, ko je delna vsota permutirane vrste večja od $L$, naslednji člen v permutirani vrsti lahko negativen.
+Vidimo tudi, da vrsta $\sum_{k=1}^{m'}a_{\sigma(k)}$ zajema člene iz vseh blokov do vključno $j$-tega negativnega bloka. %ali je jasno zakaj?
+Vrsta $\sum_{k=1}^{m_1}a_{\sigma(k)}$ pa zagotovo zajema vse člene do vključno $(j-1)$-tega negativnega bloka in morda še kakšen člen iz $j$-tega bloka. Zato je vsota $$\sum_{k=1}^{m_1}a_{\sigma(k)}+s_j-t_j,$$kjer je $s_j$ vsota $j$-tega pozitivnega bloka in $-t_j$ vsota $j$-tega negativnega bloka, večja ali enaka vsoti $\sum_{k=1}^{m'}a_{\sigma(k)}$. Iz konstrukcije permutacije $\sigma$ sledi, da je $$\sum_{k=1}^{m_1}a_{\sigma(k)}\leq L+1,$$ iz lastnosti vrste (\ref{eq:7}) pa, da je $s_j-t_j \leq -1$. Imamo torej: $$L< \sum_{k=1}^{m'}a_{\sigma(k)}\leq  \sum_{k=1}^{m_1}a_{\sigma(k)}+s_j-t_j \leq L+1-1=L.$$
+Pridemo v protislovje.
+
+Pokazali smo torej, da se prvi člen $(j+1)$-tega pozitivnega bloka v permutirani vrsti pojavi pred prvim členom $(j+1)$-tega negativnega bloka. Recimo, da se pojavi na $(m_2+1)$-tem mestu. Velja, da prvih $m_2$ členov permutirane vrste vključuje vse člene originalne vrste do vključno $j$-tega pozitivnega bloka in nekaj členov $j$-tega negativnega bloka. %malo bolj jasno tisto kar bo sledilo........................situacija podobna kot za m_1
+Na podoben način kot prej vidimo, da je prvi člen $(j+1)$-tega negativnega bloka uporabljen pred prvim členom $(j+2)$-tega pozitivnega bloka. %kako to? kaj pa če bi kar razširila v svoj dokaz?
+Po indukciji sledi, da je prvi člen vsakega bloka uporabljen pred prvim členom naslednjega bloka.
+
+Od tod vidimo, da je zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ za permutacijo $\sigma$ omejeno z $2$. %kako naj to razložim help!
+Po izreku (ref ??) sledi, da permutacija $\sigma$ ohranja konvergenco, torej ustreza prvi točki iz definicije $\lambda$-permutacij. Ker smo permutacijo $\sigma$ zgradili tako, da pogojno divergentno vrsto preoblikuje v pogojno konvergentno, torej ustreza tudi drugi točki iz definicije $\lambda$-permutacij. Permutacija $\sigma$ je torej $\lambda$-permutacija.
+
+Ogledali smo si taka primera pogojno divergentnih vrst, da je za eno veljalo $S=\emptyset$, za drugo pa $S=\R$. Pojavi se vprašanje, ki naj ostane neodgovorjeno: Je lahko $S$ še kaj drugega kot $\R$ in $\emptyset$.
 
 \section{Še dva primera...}
 
@@ -428,7 +443,7 @@ $1 \quad 2\: 4\: 3\: 5 \quad 6\: 9\: 7\: 10\: 8\: 11 \quad 12\: 16\: 13\: 17\: 1
 
 \begin{primer}
 Zopet začnemo z zaporedjem naravnih števil, razdeljenim v bloke:\\
-
+++
 $1 \quad 2\: 3\: 4\quad 5\: 6\: 7\: 8\: 9\: 10 \quad 11\: 12\: 13\: 14\: 15\: 16\:17\: 18\: 19\: \ldots $\\
 
 Drugi blok preoblikujemo tako, da prepletemo med sabo bloka $2\: 3$ in $4$. V tretjem bloku prepletemo bloka $5\: 6\: 7\: 8$ in $9\: 10$. V četrtem bloku prepletemo $11\: 12\: 13\: 14\: 15\: 16$ in $17\: 18\: 19$. Tako dobimo:\\%bolj natančno
