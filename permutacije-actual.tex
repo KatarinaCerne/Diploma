@@ -494,19 +494,92 @@ Da pokažemo, da je $\sigma_1$ $\lambda$-permutacija, moramo dokazati še, da za
 Zaporedje delnih vsot te vrste je videti tako: $$S_1=1,\ S_2=-\frac{1}{2}, \ S_3=0, \ S_4=\frac{1}{2}, \ S_5=1, \ S_6=\frac{2}{3}, \ S_7=\frac{1}{3}, \ S_8=0, \ \ldots$$
 Vidimo, da to zaporedje delnih vsot med drugim vsebuje podzaporedje, sestavljeno iz samih enk, in podzaporedje sestavljeno iz samih ničel. Zaporedje ima torej dve različni stekališči, $1$ in $0$, od koder sledi, da ni konvergentno.
 
-Če sedaj člene vrste \eqref{eq:8}
+Če sedaj člene vrste \eqref{eq:8} preuredimo s permutacijo $\sigma_1$, dobimo vrsto 
+\begin{align}\label{eq:9}
+\sum_{n=1}^{\infty}a_{\sigma(n)} = & 1-\frac{1}{2}+\frac{1}{2}-\frac{1}{2}+\frac{1}{2}-\frac{1}{3}+\frac{1}{3}-\frac{1}{3}+\frac{1}{3}-\frac{1}{3}+\frac{1}{3}- \nonumber \\ 
+&-\frac{1}{4}+\frac{1}{4}-\frac{1}{4}+\frac{1}{4}-\frac{1}{4}+\frac{1}{4}-\frac{1}{4}+\frac{1}{4}\pm\cdots
+\end{align}
+Ta pa konvergira po konvergenčnem testu za alternirajoče vrste. %ali moram povedati zakaj? 
 
-
+Permutacija $\sigma_1$ je torej res $\lambda$-permutacija.
 \end{primer}
 
 \begin{primer}
-Zopet začnemo z zaporedjem naravnih števil, razdeljenim v bloke:\\
+Oglejmo si še en primer $\lambda$-permutacije. Zopet začnemo z zaporedjem naravnih števil, razdeljenim v bloke naraščajoče dolžine:\\
 $1 \quad 2\: 3\: 4\quad 5\: 6\: 7\: 8\: 9\: 10 \quad 11\: 12\: 13\: 14\: 15\: 16\:17\: 18\: 19\: \ldots $\\
+V bloke smo ga razdelili tako, da je njihova dolžina (razen prvega bloka, ki ima dolžino $1$) večkratnik števila $3$. Drugi blok ima na primer dolžino $3$, tretji blok ima dolžino $6$, $n$-ti pa dolžino $3(n-1)$. 
 
-Drugi blok preoblikujemo tako, da prepletemo med sabo bloka $2\: 3$ in $4$. V tretjem bloku prepletemo bloka $5\: 6\: 7\: 8$ in $9\: 10$. V četrtem bloku prepletemo $11\: 12\: 13\: 14\: 15\: 16$ in $17\: 18\: 19$. Tako dobimo:\\%bolj natančno
+Zaradi lažje obravnave spet poimenujmo bloke tako:
+\begin{eqnarray*}
+C_1&=& 1\\
+C_2&=& 2\: 3\: 4\\
+C_3&=& 5\: 6\: 7\: 8\: 9\: 10\\
+&\vdots &
+\end{eqnarray*}
+
+Ker je dolžina blokov večkratnik števila $3$, lahko vsak blok $C_i$ razdelimo na bloka $C_i^1$ in $C_i^2$, kjer je $C_i^1$ dolg $\frac{2}{3}$ dolžine celotnega bloka $C_i$, blok $C_i^2$ pa $\frac{1}{3}$ dolžine celotnega bloka. Dobljena bloka nato prepletemo med sabo tako, da blok $C_i^1$ razdelimo na podbloke dožine $2$ in jih prepletemo z elementi bloka $C_i^2$. 
+Pri bloku $C_3$, na primer, je postopek tak: ker ima blok dolžino $6$, ga razdelimo na blok dolžine $\frac{2}{3} 6=4$ in blok dolžine $\frac{1}{3} 6=2$. Prvi štirje elementi $C_3$ torej prioadajo bloku $C_3^1$, zadnja dva pa $C_3^2$. Blok $C_3^1 = 5\ 6\ 7\ 8$ sedaj razdelimo na podbloka dolžine $2$, torej na $5\ 6$ in $7\ 8$ in ju prepletemo z elementi bloka $C_3^2$, tako da prvi podblok $5\ 6$ postavimo na prvo mesto, sledi prvi element bloka $C_3^2$, potem drugi podblok $7\ 8$ in nato drugi element bloka $C_3^2$. Ta postopek permutiranja poteka nekoliko drugače le pri bloku $C_2$, kjer elementov bloka $C_2^1$ ne moremo deliti na podbloke temveč ju zgolj prepletemo z elementom bloka $C_2^2$.
+
+Na tak način dobimo:
 
 $1 \quad 2\: 4\: 3\quad 5\: 6\: 9\: 7\: 8\: 10 \quad 11\: 12\: 17\: 13\: 14\: 18\: 15\: 16\: 19\: \ldots $
-%povej, zakaj je to lambda
+
+Oziroma:
+\begin{eqnarray*}
+\tilde{C}_1&=& 1\\
+\tilde{C}_2&=& 2\: 4\: 3\\
+\tilde{C}_3&=& 5\: 6\: 9\: 7\: 8\: 10\\
+&\vdots &
+\end{eqnarray*}
+
+Dobljena preureditev števil implicira permutacijo $\sigma_2$, za katero trdimo, da je $\lambda$-permutacija. Za dokaz bomo spet najprej pokazali, da je njeno zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ omejeno, nato pa poiskali pogojno divergentno vrsto, ki jo bo $\sigma_2$ preuredila tako, da bo konvergirala.
+
+Opazimo, da za bloke $C_i$, kjer je $i>2$ (permutiranje pri bloku $C_2$ poteka nekoliko drugače kot pri ostalih), velja za prvi dve števili in za zadnje število v bloku, da jih $\sigma_2$ preslika same vase. Naj bo spet $C_i = m,\ m+1, \dots, m+n-1,\ m+n$ nek poljuben blok. Ker zamenjava členov poteka samo znotraj bloka in ne med različnimi bloki, je $$\{\sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+n) \}=[m,m+n]_{\Z}.$$ Enako kot v primeru (ref??)od tod sledi $$\{\sigma_2(1), \sigma_2(2), \ldots, \sigma_2(m+n) \}=[1,m+n]_{\Z}$$
+in je $m+n$-ti element zaporedja števil blokov $b_{m+n}=1$. Opazimo, da enako velja tudi za blok $C_2$, čeprav se njegovo zadnje število s permutacijo $\sigma_2$ ne preslika samo vase.
+
+Popolnoma enaki sklepi kot v preimeru (ref??) pokažejo tudi, da za število $m$, s katerim se blok začne, in $m+1$, ki je drugo število v bloku, spet velja $$\{\sigma_2(1), \sigma_2(1), \ldots, \sigma_2(m) \}=[1,m]_{\Z},$$ oziroma $$\{\sigma_2(1), \sigma_2(1), \ldots, \sigma_2(m+1) \}=[1,m+1]_{\Z},$$ torej je $b_m=1$ in $b_{m+1}=1$.
+Spet nam ostane le še vprašanje, kako je z elementi $b_j$, kjer $j$ ni prvo, drugo ali zadnje število v nekem bloku $C_i$. 
+Naj bo $m+k$ število, ki ni ne na začetku, ne na drugem mestu in ne na koncu bloka $C_i$ in naj bo $m+k \in [m,m+n]_{\Z}$ oziroma $\sigma_2(m+k) \in \{\sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+n)$. Iščemo $b_{m+k}$. Postopamo podobno kot v primeru (ref??). 
+Vemo, da je $$\{ \sigma_2(1), \sigma_2(2), \ldots, \sigma_2(m+k) \}=[1,m-1]_{\Z}\cup \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \},$$
+torej se lahko omejimo na obravnavoi množice $\{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \}.$ Ta vsebuje števila iz bloka $\tilde{C}_i$, torej se v njej izmenjujejo števila iz blokov $C_i^1$ in $C_i^2$. Spet opazimo, da če sta števili $n_1$ in $n_2$ obe vsebovani na primer v bloku $C_i^1$ in je $n_1<n_2$, bo tudi v permutiranem bloku $\tilde{C}_i$ število $n_1$ nastopilo pred številom $n_2$.
+Enako kot prej lahko množico vseh števil iz bloka $C_i^1$, ki so vsebovana v množici $\{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \},$ da zapisati kot $[m,m+j]$, kjer je $$m=\min \{C_i^1 \cap \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \} \}$$
+in $$m+j=\max \{C_i^1 \cap \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \} \}$$
+in množica vseh števil iz bloka $C_i^2$, ki so vsebovana v množici $\{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \},$ da zapisati kot $[m+o,m+p]$, kjer je $$m+o=\min \{C_i^2 \cap \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \} \}$$
+in $$m+p=\max \{C_i^2 \cap \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \} \}.$$
+Sledi $$\{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \}=[m,m+j]_{\Z} \cup [m+o,m+p]_{\Z}.$$
+Dobimo enak rezultat, kot v primeru (ref??), torej, da je $$\{ \sigma_2(1), \sigma_2(m+1), \ldots, \sigma_2(m+k) \}= [1,m+j]_{\Z} \cup [m+o,m+p]_{\Z},$$
+ki predstavlja končni zapis, če je $m+j+1<m+o$. V tem primeru je $m+k$-ti element zaporedja števil blokov $b_{m+k}=2$. Če pa je $m+j+1=m+o$, pa sei zapis poenostavi na $$\{ \sigma_1(1), \sigma_1(m+1), \ldots, \sigma_1(m+k) \}=[1,m+k]_{\Z}$$
+in velja $b_{m+k}=1$.
+Ker je bila izbira števila $m+k$ poljubna, so torej vsi členi zaporedja števil blokov za permutacijo $\sigma_2$ enaki ali $1$ ali $2$, zaporedje števil blokov je zato omejeno in po izreku (ref??) permutacija $\sigma_2$ ohranja konvergenco.
+
+Potrebujemo le še primer pogojno divergentne vrste, ki jo bo permutacija $\sigma_2$ preuredila tako, da bo konvergirala. Oglejmo si naslednjo vrsto:
+\begin{align}\label{eq:10}
+\sum_{n=1}^{\infty}a_n=&1 + \left(\frac{1}{4}+\frac{1}{4}-\frac{1}{2} \right) + \left(\frac{1}{6}+\frac{1}{6}+\frac{1}{6}+\frac{1}{6}-\frac{1}{3}-\frac{1}{3} \right)+ \nonumber \\
+&+\left(\frac{1}{8}+\frac{1}{8}+\frac{1}{8}+\frac{1}{8}+\frac{1}{8}+\frac{1}{8}-\frac{1}{4}-\frac{1}{4}-\frac{1}{4}\right) \pm \cdots
+\end{align}
+
+Zaporedje delnih vsot te vrste je tako:
+$$\{S_n\}_{n=1}^{\infty}= 1,\ \frac{5}{4}, \ \frac{6}{4}, 1, \ \frac{7}{6}, \ \frac{8}{6}, \ \frac{9}{6}, \ \frac{10}{6}, \ \frac{8}{6}, \ 1, \ldots$$
+
+Opazimo, da to zaporedje delnih vsot vsebuje podzaporedje, katerega členi so vsi enaki $1$. Torej je $1$ eno izmed stekališč zaporedja $\{S_n\}_{n=1}^{\infty}$. Vidimo pa tudi, da tisti elementi zaporedja $\{S_n\}_{n=1}^{\infty}$, ki imajo indeks $n=b_k$, kjer je $\{b_k\}_{k=1}^{\infty}$ zaporedje, podano z rekurzivno formulo $b_k=b_{k-1}+3 k-1$, $b_1=3$, tvorijo podzaporedje $\{T_n\}_{n=1}^{\infty}$ zaporedja $\{S_n\}_{n=1}^{\infty}$, za katerega velja $$T_n = \frac{2 n-2}{n}.$$ Vidimo, da je limita zaporedja $\{T_n\}_{n=1}^{\infty}$, ko gre $n$ proti neskončno, enaka $2$. Torej je $2$ še eno izmed stekališč zaporedja $\{S_n\}_{n=1}^{\infty}$. Ker ima zaporedje delnih vsot vsaj dve različni stekališči, je divergentno. Sledi, da je tudi vrsta \eqref{eq:10} divergentna.
+%tega, da ravno členi z indeksom iz b_n sestavljajo podzaporedje, nikjer ne dokažem. je to narobe?
+
+Če sedaj člene vrste \eqref{eq:10} delujemo s permutacijo $\sigma_2$, dobimo vrsto
+\begin{align}\label{eq:11}
+\sum_{n=1}^{\infty}a_{\sigma_2(n)}=&1+\frac{1}{4}-\frac{1}{2}+\frac{1}{4}+\frac{1}{6}+\frac{1}{6}-\frac{1}{3}+\frac{1}{6}+\frac{1}{6}-\frac{1}{3}+ \nonumber \\
+&+\frac{1}{8}+\frac{1}{8}-\frac{1}{4}+\frac{1}{8}+\frac{1}{8}-\frac{1}{4}+\frac{1}{8}+\frac{1}{8}-\frac{1}{4} \pm \cdots
+\end{align}
+
+Da pokažemo, da je dobljena vrsta konvergentna, si spet oglejmo zaporedje delnih vsot:
+$$\{\tilde{S}_n\}_{n=1}^{\infty}= 1,\ \frac{5}{4}, \ \frac{3}{4}, 1, \ \frac{7}{6}, \ \frac{8}{6}, \ 1, \ \frac{9}{8}, \ \frac{10}{8}, \ 1,  \ \frac{9}{8}, \ \frac{10}{8}, \ 1 \ldots$$
+
+Vemo, da neko zaporedje $\{a_n\}_{n=1}^{\infty}$ konvergira natanko tedaj, ko konvergira zaporedje $\{a_n\}_{n=m}^{\infty}$, kjer je $m$ neko naravno število. Torej bo zaporedje $\{\tilde{S}_n\}_{n=1}^{\infty}$ konvergiralo natanko tedaj, ko bo konvergiralo zaporedje $\{\tilde{S}_n\}_{n=4}^{\infty}$. Opazimo, da je zaporedje $\{\tilde{S}_n\}_{n=4}^{\infty}$ sestavljeno iz treh podzaporedij. Členi $\tilde{S}_n$, kjer je $n=3j+1$ za $j \geq 0$, tvorijo podzaporedje, katerega členi so vsi enaki $1$. Členi $\tilde{S}_n$, kjer je $n=3j+2$ za $j \geq 0$, tvorijo podzaporedje 
+$$\{U_k\}_{k=3}^{\infty}=\frac{7}{6}, \ \frac{7}{6}, \ \frac{9}{8}, \ \frac{9}{8}, \ \cdots, \ \frac{2k+1}{2k}, \ \frac{2k+1}{2k}, \ \cdots,$$
+členi $\tilde{S}_n$, kjer je $n=3$ za $j \geq 1$, pa tvorijo podzaporedje 
+$$\{V_k\}_{k=3}^{\infty}=\frac{8}{6}, \ \frac{8}{6}, \ \frac{10}{8}, \ \frac{10}{8}, \ \cdots, \ \frac{2k+2}{2k}, \ \frac{2k+2}{2k}, \ \cdots$$
+Vsa tri podzaporedja imajo limito $1$, ko gre $k$ proti neskončno. Ker omenjena tri podzaporedja pokrivajo celotno zaporedje $\{\tilde{S}_k\}_{k=4}^{\infty}$, je $1$ edino stekališče oziroma limita tega zaporedja. Sledi, da zaporedje $\{\tilde{S}_k\}_{k=1}^{\infty}$ konvergira, zato je tudi vrsta \eqref{eq:11} konvergentna.
+Tako smo dokazali, da je tudi $\sigma_2$ $\lambda$-permutacija.
+
 \end{primer}
 
 \section{Zaključek}
