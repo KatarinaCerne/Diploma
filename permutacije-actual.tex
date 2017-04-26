@@ -491,7 +491,7 @@ Ogledali smo si taka primera pogojno divergentnih vrst, da je za eno veljalo $S=
 
 Za konec si oglejmo še dva primera $\lambda$-permutacij.
 
-\begin{primer}
+\begin{primer}\label{pr:1}
 Razdelimo naravna števila v bloke na naslednji način:\\
 
 $1 \quad 2\: 3\: 4\: 5 \quad 6\: 7\: 8\: 9\: 10\: 11 \quad 12\: 13\: 14\: 15\: 16\: 17\: 18\: 19\: \ldots $\\
@@ -566,7 +566,7 @@ Ta pa konvergira po konvergenčnem testu za alternirajoče vrste. %ali moram pov
 Permutacija $\sigma_1$ je torej res $\lambda$-permutacija.
 \end{primer}
 
-\begin{primer}
+\begin{primer}\label{pr:2}
 Oglejmo si še en primer $\lambda$-permutacije. Zopet začnemo z zaporedjem naravnih števil, razdeljenim v bloke naraščajoče dolžine:\\
 $1 \quad 2\: 3\: 4\quad 5\: 6\: 7\: 8\: 9\: 10 \quad 11\: 12\: 13\: 14\: 15\: 16\:17\: 18\: 19\: \ldots $\\
 V bloke smo ga razdelili tako, da je njihova dolžina (razen prvega bloka, ki ima dolžino $1$) večkratnik števila $3$. Drugi blok ima na primer dolžino $3$, tretji blok ima dolžino $6$, $n$-ti pa dolžino $3(n-1)$. 
@@ -596,12 +596,12 @@ Oziroma:
 
 Dobljena preureditev števil implicira permutacijo $\sigma_2$, za katero trdimo, da je $\lambda$-permutacija. Za dokaz bomo spet najprej pokazali, da je njeno zaporedje števil blokov $\{b_n\}_{n=1}^{\infty}$ omejeno, nato pa poiskali pogojno divergentno vrsto, ki jo bo $\sigma_2$ preuredila tako, da bo konvergirala.
 
-Opazimo, da za bloke $C_i$, kjer je $i>2$ (permutiranje pri bloku $C_2$ poteka nekoliko drugače kot pri ostalih), velja za prvi dve števili in za zadnje število v bloku, da jih $\sigma_2$ preslika same vase. Naj bo spet $C_i = m,\ m+1, \dots, m+n-1,\ m+n$ nek poljuben blok. Ker zamenjava členov poteka samo znotraj bloka in ne med različnimi bloki, je $$\{\sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+n) \}=[m,m+n]_{\Z}.$$ Enako kot v primeru (ref??)od tod sledi $$\{\sigma_2(1), \sigma_2(2), \ldots, \sigma_2(m+n) \}=[1,m+n]_{\Z}$$
+Opazimo, da za bloke $C_i$, kjer je $i>2$ (permutiranje pri bloku $C_2$ poteka nekoliko drugače kot pri ostalih), velja za prvi dve števili in za zadnje število v bloku, da jih $\sigma_2$ preslika same vase. Naj bo spet $C_i = m,\ m+1, \dots, m+n-1,\ m+n$ nek poljuben blok. Ker zamenjava členov poteka samo znotraj bloka in ne med različnimi bloki, je $$\{\sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+n) \}=[m,m+n]_{\Z}.$$ Enako kot v primeru \ref{pr:1} od tod sledi $$\{\sigma_2(1), \sigma_2(2), \ldots, \sigma_2(m+n) \}=[1,m+n]_{\Z}$$
 in je $m+n$-ti element zaporedja števil blokov $b_{m+n}=1$. Opazimo, da enako velja tudi za blok $C_2$, čeprav se njegovo zadnje število s permutacijo $\sigma_2$ ne preslika samo vase.
 
-Popolnoma enaki sklepi kot v preimeru (ref??) pokažejo tudi, da za število $m$, s katerim se blok začne, in $m+1$, ki je drugo število v bloku, spet velja $$\{\sigma_2(1), \sigma_2(1), \ldots, \sigma_2(m) \}=[1,m]_{\Z},$$ oziroma $$\{\sigma_2(1), \sigma_2(1), \ldots, \sigma_2(m+1) \}=[1,m+1]_{\Z},$$ torej je $b_m=1$ in $b_{m+1}=1$.
+Popolnoma enaki sklepi kot v preimeru \ref{pr:1} pokažejo tudi, da za število $m$, s katerim se blok začne, in $m+1$, ki je drugo število v bloku, spet velja $$\{\sigma_2(1), \sigma_2(1), \ldots, \sigma_2(m) \}=[1,m]_{\Z},$$ oziroma $$\{\sigma_2(1), \sigma_2(1), \ldots, \sigma_2(m+1) \}=[1,m+1]_{\Z},$$ torej je $b_m=1$ in $b_{m+1}=1$.
 Spet nam ostane le še vprašanje, kako je z elementi $b_j$, kjer $j$ ni prvo, drugo ali zadnje število v nekem bloku $C_i$. 
-Naj bo $m+k$ število, ki ni ne na začetku, ne na drugem mestu in ne na koncu bloka $C_i$ in naj bo $m+k \in [m,m+n]_{\Z}$ oziroma $\sigma_2(m+k) \in \{\sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+n)$. Iščemo $b_{m+k}$. Postopamo podobno kot v primeru (ref??). 
+Naj bo $m+k$ število, ki ni ne na začetku, ne na drugem mestu in ne na koncu bloka $C_i$ in naj bo $m+k \in [m,m+n]_{\Z}$ oziroma $\sigma_2(m+k) \in \{\sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+n)$. Iščemo $b_{m+k}$. Postopamo podobno kot v primeru \ref{pr:1}. 
 Vemo, da je $$\{ \sigma_2(1), \sigma_2(2), \ldots, \sigma_2(m+k) \}=[1,m-1]_{\Z}\cup \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \},$$
 torej se lahko omejimo na obravnavoi množice $\{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \}.$ Ta vsebuje števila iz bloka $\tilde{C}_i$, torej se v njej izmenjujejo števila iz blokov $C_i^1$ in $C_i^2$. Spet opazimo, da če sta števili $n_1$ in $n_2$ obe vsebovani na primer v bloku $C_i^1$ in je $n_1<n_2$, bo tudi v permutiranem bloku $\tilde{C}_i$ število $n_1$ nastopilo pred številom $n_2$.
 Enako kot prej lahko množico vseh števil iz bloka $C_i^1$, ki so vsebovana v množici $\{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \},$ da zapisati kot $[m,m+j]$, kjer je $$m=\min \{C_i^1 \cap \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \} \}$$
@@ -609,10 +609,10 @@ in $$m+j=\max \{C_i^1 \cap \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) 
 in množica vseh števil iz bloka $C_i^2$, ki so vsebovana v množici $\{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \},$ da zapisati kot $[m+o,m+p]$, kjer je $$m+o=\min \{C_i^2 \cap \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \} \}$$
 in $$m+p=\max \{C_i^2 \cap \{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \} \}.$$
 Sledi $$\{ \sigma_2(m), \sigma_2(m+1), \ldots, \sigma_2(m+k) \}=[m,m+j]_{\Z} \cup [m+o,m+p]_{\Z}.$$
-Dobimo enak rezultat, kot v primeru (ref??), torej, da je $$\{ \sigma_2(1), \sigma_2(m+1), \ldots, \sigma_2(m+k) \}= [1,m+j]_{\Z} \cup [m+o,m+p]_{\Z},$$
+Dobimo enak rezultat, kot v primeru \ref{pr:1}, torej, da je $$\{ \sigma_2(1), \sigma_2(m+1), \ldots, \sigma_2(m+k) \}= [1,m+j]_{\Z} \cup [m+o,m+p]_{\Z},$$
 ki predstavlja končni zapis, če je $m+j+1<m+o$. V tem primeru je $m+k$-ti element zaporedja števil blokov $b_{m+k}=2$. Če pa je $m+j+1=m+o$, pa sei zapis poenostavi na $$\{ \sigma_1(1), \sigma_1(m+1), \ldots, \sigma_1(m+k) \}=[1,m+k]_{\Z}$$
 in velja $b_{m+k}=1$.
-Ker je bila izbira števila $m+k$ poljubna, so torej vsi členi zaporedja števil blokov za permutacijo $\sigma_2$ enaki ali $1$ ali $2$, zaporedje števil blokov je zato omejeno in po izreku (ref??) permutacija $\sigma_2$ ohranja konvergenco.
+Ker je bila izbira števila $m+k$ poljubna, so torej vsi členi zaporedja števil blokov za permutacijo $\sigma_2$ enaki ali $1$ ali $2$, zaporedje števil blokov je zato omejeno in po trditvi \ref{trd:ohranjanje} permutacija $\sigma_2$ ohranja konvergenco.
 
 Potrebujemo le še primer pogojno divergentne vrste, ki jo bo permutacija $\sigma_2$ preuredila tako, da bo konvergirala. Oglejmo si naslednjo vrsto:
 \begin{align}\label{eq:10}
