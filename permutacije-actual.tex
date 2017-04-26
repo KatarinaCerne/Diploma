@@ -46,7 +46,7 @@
 \newcommand{\imeavtorja}{Katarina Černe} % ime avtorja
 \newcommand{\imementorja}{izred.~prof.~dr.~Barbara Drinovec Drnovšek} % akademski naziv in ime mentorja
 \newcommand{\naslovdela}{Permutacije in konvergenca številskih vrst}
-\newcommand{\letnica}{2016} %letnica diplome
+\newcommand{\letnica}{2017} %letnica diplome
 
 \begin{document}
 % od tod do povzetka ne spreminjaj nicesar
@@ -422,7 +422,7 @@ Da bomo lahko odgovorili nanj, najprej definirajmo relacijo delne urejenosti na 
 Pokazali smo že (trditev \ref{trd:o in n}), da je, če je $\sigma$ $\lambda$-permutacija, tudi $\sigma \circ \sigma$  $\lambda$-permutacija. Če vrsta $\sum^{\infty}_{n=1}a_{\sigma(n)}$ konvergira, torej vedno konvergira tudi $\sum^{\infty}_{n=1}a_{\sigma \circ \sigma(n)}$, lahko pa obstaja kakšna vrsta $\sum^{\infty}_{n=1}b_n$, da je vrsta $\sum^{\infty}_{n=1}b_{\sigma \circ \sigma(n)}$ konvergentna, vrsta $\sum^{\infty}_{n=1}b_{\sigma(n)}$ pa ne. Zato velja $\sigma < \sigma \circ \sigma$, od tod pa induktivno sledi: $\sigma < \sigma \circ \sigma < \sigma \circ \sigma \circ \sigma < \cdots$. Za vsako $\lambda$-permutacijo lahko najdemo novo $\lambda$-permutacijo, ki bo ">večja"< od nje. Torej množica vseh $\lambda$-permutacij nima zgornje meje. 
 
 
-\section{Pogojno divergentne vrste in $\lambda$-permutacije}
+\section{Pogojno divergentne vrste in $\lambda$-permutacije}\label{sec:mnS}
 
 V tem razdelku bomo poskušali odgovoriti še na vprašanje, ali za vsako pogojno divergentno vrsto obstaja $\lambda$-permutacija, taka, da vrsta s spremenjenim vrstnim redom členov konvergira. V ta namen za vsako pogojno konvergento oziroma pogojno divergentno vrsto definirajmo množico $$S=\left \{L\in \mathbb{R}:\textrm{obstaja }\lambda \textrm{-permutacija } \sigma, \sum^{\infty}_{n=1}a_{\sigma (n)}=L\right \}.$$ Na vprašanje bomo odgovorili s pomočjo protiprimera, torej primera pogojno divergentne številske vrste, za katero je $S=\emptyset$. %v drugem delu tega razdelka si bomo ogledali še blablabla
 
@@ -646,6 +646,14 @@ Tako smo dokazali, da je tudi $\sigma_2$ $\lambda$-permutacija.
 
 \section{Zaključek}
 
+V uvodu smo si zastavili kar nekaj vprašanj v zvezi z $lambda$-permutacijami - o tem, ali sploh obstaja kakšna, o njihovih lastnostih in delovanju na pogojno divergentne vrste ter o moči in omejenosti množice lambda permutacij. Da množica $\lambda$-permutacij ni prazna, je v nalogi potrjeno s primeri konstrukcij treh različnih $\lambda$-permutacij, v nadaljevanju pa se pokaže, da je števno neskončna in neomejena. S tem dokažemo, da, kar se tiče seštevanja vrst, še vedno lahko brez škode uporabljamo zaporedje naravnih števil, saj med $\lambda$-permutacijami ni najti tiste optimalne, ki bi narekovala novo, za seštevanje vrst bolj primerno zaporedje, ki bi zagotavljalo največ konvergentnih vrst.
+
+Kljub temu, da diplomska naloga odgovarja na vsa zastavljena vprašanja, s tem še zdaleč ni povedano vse o $\lambda$-permutacijah. Nekaj novih vprašanj se nam na primer postavi v razdelku \ref{sec:mnS}, v katerem predlagamo taki vrsti, za kateri je množica $S$ prazna oziroma enaka množici realnih števil. Poiščemo torej pogojno divergentno vrsto, ki je nobena $\lambda$-permutacija ne more spremeniti v konvergentno, in drugo pogojno konvergentno divergentno vrsto, ki jo $\lambda$-permutacije lahko preoblikujejo tako, da je njena vsota enaka kateremukoli realnemu številu. Tu se nam zastavlja vprašanje, kakšna še je lahko množica $S$.
+
+Ob obravnavanju primera vrste, za katerega je množica $S$ prazna, pa se pojavi še nekaj zanimivih vprašanj. Omenjena vrsta je pogojno divergentna, torej obstaja neka permutacija, ki njene člene preoblikuje tako, da je dobljena vrsta konvergentna, vendar smo videli, da ta permutacija ni $\lambda$-permutacija. Očitno torej obstaja še veliko več vrst permutacij, ki iz divergentnih ustvarjajo konvergentne. Kakšne so te permutacije? Kaj se da povedati o njih? Imajo kakšne skupne lastnosti?
+
+Teorija $\lambda$-permutacij nam torej odpira nov in zelo zanimiv pogled na pogojno konvergentne in pogojno divergentne vrste.
+
 
 
 \begin{thebibliography}{99}
@@ -655,8 +663,6 @@ S.~G.~Krantz in J. D. McNeal, \textit{Creating more convergent series}, Amer.~Ma
 \bibitem{vir2}
 D.~Velleman, \textit{A note on $\lambda$-permutations}, Amer.~Math.~Monthly \textbf{113} (2006) 173-178.
 \bibitem{vir3}
-P.~Schaefer, \textit{Sum-preserving rearrangements of infinite series}, Amer.~Math.~Monthly \textbf{88} (1981), 33-40.
-\bibitem{vir4}
 J.~Globevnik in M.~Brojan, \textit{Analiza I},  DMFA - založništvo, Ljubljana, 2010.
 
 \end{thebibliography}
